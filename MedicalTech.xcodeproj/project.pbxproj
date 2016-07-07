@@ -7,14 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35814269906F36F5C4FC10D8 /* libPods-MedicalTechTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 768BFE986A470FF9755CC86B /* libPods-MedicalTechTests.a */; };
+		896C13F3F28D0E5DD49CBE5D /* libPods-MedicalTech.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 488ACB082AA353EC591E2155 /* libPods-MedicalTech.a */; };
+		9648E06B1D2E020300A3A90E /* KNBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9648E0601D2E020300A3A90E /* KNBannerView.m */; };
+		9648E06C1D2E020300A3A90E /* KNCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9648E0621D2E020300A3A90E /* KNCollectionViewCell.m */; };
+		9648E06D1D2E020300A3A90E /* KNJudgementTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 9648E0641D2E020300A3A90E /* KNJudgementTool.m */; };
+		9648E06E1D2E020300A3A90E /* NSData+KNCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 9648E0661D2E020300A3A90E /* NSData+KNCache.m */; };
+		9648E06F1D2E020300A3A90E /* NSString+hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 9648E0681D2E020300A3A90E /* NSString+hash.m */; };
+		9648E0701D2E020300A3A90E /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9648E06A1D2E020300A3A90E /* UIView+Extension.m */; };
+		96A077C81D28E0450089C0A9 /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A077C71D28E0450089C0A9 /* HMSegmentedControl.m */; };
 		96F1332B1D2642B70097A7D3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F1332A1D2642B70097A7D3 /* main.m */; };
 		96F1332E1D2642B70097A7D3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F1332D1D2642B70097A7D3 /* AppDelegate.m */; };
-		96F133311D2642B70097A7D3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F133301D2642B70097A7D3 /* ViewController.m */; };
 		96F133341D2642B70097A7D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96F133321D2642B70097A7D3 /* Main.storyboard */; };
 		96F133361D2642B70097A7D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96F133351D2642B70097A7D3 /* Assets.xcassets */; };
 		96F133391D2642B70097A7D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96F133371D2642B70097A7D3 /* LaunchScreen.storyboard */; };
 		96F133441D2642B70097A7D3 /* MedicalTechTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F133431D2642B70097A7D3 /* MedicalTechTests.m */; };
 		96F1334F1D2642B70097A7D3 /* MedicalTechUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F1334E1D2642B70097A7D3 /* MedicalTechUITests.m */; };
+		96F1335E1D2643280097A7D3 /* IndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F1335D1D2643280097A7D3 /* IndexViewController.m */; };
+		96F133611D2645310097A7D3 /* MedicalNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F133601D2645310097A7D3 /* MedicalNavigationViewController.m */; };
+		D0B4E5C4FDB0A5A642E32713 /* libPods-MedicalTechUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9339BD68C01B53D9EDB46908 /* libPods-MedicalTechUITests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,12 +46,33 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02EA0539DC719DA1C1FCEB41 /* Pods-MedicalTechUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MedicalTechUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MedicalTechUITests/Pods-MedicalTechUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		326EDC0A220671CB02F976FA /* Pods-MedicalTechTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MedicalTechTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MedicalTechTests/Pods-MedicalTechTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3682874EF0D1B41673A15DFA /* Pods-MedicalTechUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MedicalTechUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MedicalTechUITests/Pods-MedicalTechUITests.release.xcconfig"; sourceTree = "<group>"; };
+		488ACB082AA353EC591E2155 /* libPods-MedicalTech.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MedicalTech.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		63968919CBCB57FC9520AB6C /* Pods-MedicalTechTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MedicalTechTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MedicalTechTests/Pods-MedicalTechTests.release.xcconfig"; sourceTree = "<group>"; };
+		768BFE986A470FF9755CC86B /* libPods-MedicalTechTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MedicalTechTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9339BD68C01B53D9EDB46908 /* libPods-MedicalTechUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MedicalTechUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9648E05F1D2E020300A3A90E /* KNBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KNBannerView.h; sourceTree = "<group>"; };
+		9648E0601D2E020300A3A90E /* KNBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KNBannerView.m; sourceTree = "<group>"; };
+		9648E0611D2E020300A3A90E /* KNCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KNCollectionViewCell.h; sourceTree = "<group>"; };
+		9648E0621D2E020300A3A90E /* KNCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KNCollectionViewCell.m; sourceTree = "<group>"; };
+		9648E0631D2E020300A3A90E /* KNJudgementTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KNJudgementTool.h; sourceTree = "<group>"; };
+		9648E0641D2E020300A3A90E /* KNJudgementTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KNJudgementTool.m; sourceTree = "<group>"; };
+		9648E0651D2E020300A3A90E /* NSData+KNCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+KNCache.h"; sourceTree = "<group>"; };
+		9648E0661D2E020300A3A90E /* NSData+KNCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+KNCache.m"; sourceTree = "<group>"; };
+		9648E0671D2E020300A3A90E /* NSString+hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+hash.h"; sourceTree = "<group>"; };
+		9648E0681D2E020300A3A90E /* NSString+hash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+hash.m"; sourceTree = "<group>"; };
+		9648E0691D2E020300A3A90E /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		9648E06A1D2E020300A3A90E /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		96A077BB1D28DEF90089C0A9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		96A077BD1D28DF080089C0A9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		96A077C61D28E0450089C0A9 /* HMSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSegmentedControl.h; sourceTree = "<group>"; };
+		96A077C71D28E0450089C0A9 /* HMSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSegmentedControl.m; sourceTree = "<group>"; };
 		96F133261D2642B70097A7D3 /* MedicalTech.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedicalTech.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96F1332A1D2642B70097A7D3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		96F1332C1D2642B70097A7D3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		96F1332D1D2642B70097A7D3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		96F1332F1D2642B70097A7D3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		96F133301D2642B70097A7D3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		96F133331D2642B70097A7D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		96F133351D2642B70097A7D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		96F133381D2642B70097A7D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +83,12 @@
 		96F1334A1D2642B70097A7D3 /* MedicalTechUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MedicalTechUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		96F1334E1D2642B70097A7D3 /* MedicalTechUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MedicalTechUITests.m; sourceTree = "<group>"; };
 		96F133501D2642B70097A7D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96F1335C1D2643280097A7D3 /* IndexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexViewController.h; sourceTree = "<group>"; };
+		96F1335D1D2643280097A7D3 /* IndexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexViewController.m; sourceTree = "<group>"; };
+		96F1335F1D2645310097A7D3 /* MedicalNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MedicalNavigationViewController.h; sourceTree = "<group>"; };
+		96F133601D2645310097A7D3 /* MedicalNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MedicalNavigationViewController.m; sourceTree = "<group>"; };
+		AB025E3C502BAE8040654D12 /* Pods-MedicalTech.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MedicalTech.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MedicalTech/Pods-MedicalTech.debug.xcconfig"; sourceTree = "<group>"; };
+		F9C53D8AC4A7CA87352F20C9 /* Pods-MedicalTech.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MedicalTech.release.xcconfig"; path = "Pods/Target Support Files/Pods-MedicalTech/Pods-MedicalTech.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				896C13F3F28D0E5DD49CBE5D /* libPods-MedicalTech.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35814269906F36F5C4FC10D8 /* libPods-MedicalTechTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +112,54 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0B4E5C4FDB0A5A642E32713 /* libPods-MedicalTechUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7826773AA5861A4734FF2900 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AB025E3C502BAE8040654D12 /* Pods-MedicalTech.debug.xcconfig */,
+				F9C53D8AC4A7CA87352F20C9 /* Pods-MedicalTech.release.xcconfig */,
+				326EDC0A220671CB02F976FA /* Pods-MedicalTechTests.debug.xcconfig */,
+				63968919CBCB57FC9520AB6C /* Pods-MedicalTechTests.release.xcconfig */,
+				02EA0539DC719DA1C1FCEB41 /* Pods-MedicalTechUITests.debug.xcconfig */,
+				3682874EF0D1B41673A15DFA /* Pods-MedicalTechUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9648E05E1D2E01D700A3A90E /* KNBannerView */ = {
+			isa = PBXGroup;
+			children = (
+				9648E05F1D2E020300A3A90E /* KNBannerView.h */,
+				9648E0601D2E020300A3A90E /* KNBannerView.m */,
+				9648E0611D2E020300A3A90E /* KNCollectionViewCell.h */,
+				9648E0621D2E020300A3A90E /* KNCollectionViewCell.m */,
+				9648E0631D2E020300A3A90E /* KNJudgementTool.h */,
+				9648E0641D2E020300A3A90E /* KNJudgementTool.m */,
+				9648E0651D2E020300A3A90E /* NSData+KNCache.h */,
+				9648E0661D2E020300A3A90E /* NSData+KNCache.m */,
+				9648E0671D2E020300A3A90E /* NSString+hash.h */,
+				9648E0681D2E020300A3A90E /* NSString+hash.m */,
+				9648E0691D2E020300A3A90E /* UIView+Extension.h */,
+				9648E06A1D2E020300A3A90E /* UIView+Extension.m */,
+			);
+			name = KNBannerView;
+			sourceTree = "<group>";
+		};
+		96A077BF1D28DFDF0089C0A9 /* HMSegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				96A077C61D28E0450089C0A9 /* HMSegmentedControl.h */,
+				96A077C71D28E0450089C0A9 /* HMSegmentedControl.m */,
+			);
+			name = HMSegmentedControl;
+			sourceTree = "<group>";
+		};
 		96F1331D1D2642B70097A7D3 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +167,8 @@
 				96F133421D2642B70097A7D3 /* MedicalTechTests */,
 				96F1334D1D2642B70097A7D3 /* MedicalTechUITests */,
 				96F133271D2642B70097A7D3 /* Products */,
+				7826773AA5861A4734FF2900 /* Pods */,
+				DA4BB11662673C523406D85A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,15 +185,19 @@
 		96F133281D2642B70097A7D3 /* MedicalTech */ = {
 			isa = PBXGroup;
 			children = (
+				9648E05E1D2E01D700A3A90E /* KNBannerView */,
+				96A077BF1D28DFDF0089C0A9 /* HMSegmentedControl */,
 				96F1332C1D2642B70097A7D3 /* AppDelegate.h */,
 				96F1332D1D2642B70097A7D3 /* AppDelegate.m */,
-				96F1332F1D2642B70097A7D3 /* ViewController.h */,
-				96F133301D2642B70097A7D3 /* ViewController.m */,
 				96F133321D2642B70097A7D3 /* Main.storyboard */,
 				96F133351D2642B70097A7D3 /* Assets.xcassets */,
 				96F133371D2642B70097A7D3 /* LaunchScreen.storyboard */,
 				96F1333A1D2642B70097A7D3 /* Info.plist */,
 				96F133291D2642B70097A7D3 /* Supporting Files */,
+				96F1335C1D2643280097A7D3 /* IndexViewController.h */,
+				96F1335D1D2643280097A7D3 /* IndexViewController.m */,
+				96F1335F1D2645310097A7D3 /* MedicalNavigationViewController.h */,
+				96F133601D2645310097A7D3 /* MedicalNavigationViewController.m */,
 			);
 			path = MedicalTech;
 			sourceTree = "<group>";
@@ -140,6 +228,18 @@
 			path = MedicalTechUITests;
 			sourceTree = "<group>";
 		};
+		DA4BB11662673C523406D85A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				96A077BD1D28DF080089C0A9 /* UIKit.framework */,
+				96A077BB1D28DEF90089C0A9 /* QuartzCore.framework */,
+				488ACB082AA353EC591E2155 /* libPods-MedicalTech.a */,
+				768BFE986A470FF9755CC86B /* libPods-MedicalTechTests.a */,
+				9339BD68C01B53D9EDB46908 /* libPods-MedicalTechUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +247,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 96F133531D2642B70097A7D3 /* Build configuration list for PBXNativeTarget "MedicalTech" */;
 			buildPhases = (
+				A9EAA0131FFF01C168DEB65B /* [CP] Check Pods Manifest.lock */,
 				96F133221D2642B70097A7D3 /* Sources */,
 				96F133231D2642B70097A7D3 /* Frameworks */,
 				96F133241D2642B70097A7D3 /* Resources */,
+				411490F374B21A1B71538E03 /* [CP] Embed Pods Frameworks */,
+				EA1614A149092AA65B90F6EE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -164,9 +267,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 96F133561D2642B70097A7D3 /* Build configuration list for PBXNativeTarget "MedicalTechTests" */;
 			buildPhases = (
+				749B90CAE4B3564F9E2C56E4 /* [CP] Check Pods Manifest.lock */,
 				96F1333B1D2642B70097A7D3 /* Sources */,
 				96F1333C1D2642B70097A7D3 /* Frameworks */,
 				96F1333D1D2642B70097A7D3 /* Resources */,
+				681BB4B3AAD7E1998EC9EBEC /* [CP] Embed Pods Frameworks */,
+				C18FA5F3CB8E6316328FA163 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -182,9 +288,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 96F133591D2642B70097A7D3 /* Build configuration list for PBXNativeTarget "MedicalTechUITests" */;
 			buildPhases = (
+				51B1AAD37224F37885BECED4 /* [CP] Check Pods Manifest.lock */,
 				96F133461D2642B70097A7D3 /* Sources */,
 				96F133471D2642B70097A7D3 /* Frameworks */,
 				96F133481D2642B70097A7D3 /* Resources */,
+				1F2B4D9C5DA3445F4DAFB2AD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -265,14 +373,145 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1F2B4D9C5DA3445F4DAFB2AD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MedicalTechUITests/Pods-MedicalTechUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		411490F374B21A1B71538E03 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MedicalTech/Pods-MedicalTech-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		51B1AAD37224F37885BECED4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		681BB4B3AAD7E1998EC9EBEC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MedicalTechTests/Pods-MedicalTechTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		749B90CAE4B3564F9E2C56E4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A9EAA0131FFF01C168DEB65B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C18FA5F3CB8E6316328FA163 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MedicalTechTests/Pods-MedicalTechTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA1614A149092AA65B90F6EE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MedicalTech/Pods-MedicalTech-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		96F133221D2642B70097A7D3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96F133311D2642B70097A7D3 /* ViewController.m in Sources */,
 				96F1332E1D2642B70097A7D3 /* AppDelegate.m in Sources */,
 				96F1332B1D2642B70097A7D3 /* main.m in Sources */,
+				9648E0701D2E020300A3A90E /* UIView+Extension.m in Sources */,
+				9648E06E1D2E020300A3A90E /* NSData+KNCache.m in Sources */,
+				96F133611D2645310097A7D3 /* MedicalNavigationViewController.m in Sources */,
+				96F1335E1D2643280097A7D3 /* IndexViewController.m in Sources */,
+				9648E06C1D2E020300A3A90E /* KNCollectionViewCell.m in Sources */,
+				96A077C81D28E0450089C0A9 /* HMSegmentedControl.m in Sources */,
+				9648E06D1D2E020300A3A90E /* KNJudgementTool.m in Sources */,
+				9648E06B1D2E020300A3A90E /* KNBannerView.m in Sources */,
+				9648E06F1D2E020300A3A90E /* NSString+hash.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,6 +608,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Debug;
 		};
@@ -405,36 +645,45 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Release;
 		};
 		96F133541D2642B70097A7D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB025E3C502BAE8040654D12 /* Pods-MedicalTech.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MedicalTech/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = org.jason.MedicalTech;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Debug;
 		};
 		96F133551D2642B70097A7D3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9C53D8AC4A7CA87352F20C9 /* Pods-MedicalTech.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MedicalTech/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = org.jason.MedicalTech;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Release;
 		};
 		96F133571D2642B70097A7D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 326EDC0A220671CB02F976FA /* Pods-MedicalTechTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = MedicalTechTests/Info.plist;
@@ -447,6 +696,7 @@
 		};
 		96F133581D2642B70097A7D3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63968919CBCB57FC9520AB6C /* Pods-MedicalTechTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = MedicalTechTests/Info.plist;
@@ -459,6 +709,7 @@
 		};
 		96F1335A1D2642B70097A7D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02EA0539DC719DA1C1FCEB41 /* Pods-MedicalTechUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = MedicalTechUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -470,6 +721,7 @@
 		};
 		96F1335B1D2642B70097A7D3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3682874EF0D1B41673A15DFA /* Pods-MedicalTechUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = MedicalTechUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -498,6 +750,7 @@
 				96F133551D2642B70097A7D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		96F133561D2642B70097A7D3 /* Build configuration list for PBXNativeTarget "MedicalTechTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +759,7 @@
 				96F133581D2642B70097A7D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		96F133591D2642B70097A7D3 /* Build configuration list for PBXNativeTarget "MedicalTechUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +768,7 @@
 				96F1335B1D2642B70097A7D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
