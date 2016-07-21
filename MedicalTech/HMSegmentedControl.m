@@ -178,6 +178,7 @@
     _sectionTitles = sectionTitles;
     
     [self setNeedsLayout];
+    [self setNeedsDisplay];
 }
 
 - (void)setSectionImages:(NSArray *)sectionImages {
@@ -702,10 +703,10 @@
                 // When we don't have any width left to substract, we have the segment index.
                 if (widthLeft <= 0)
                     break;
-                
                 segment++;
             }
         }
+        [self touchIndex:segment];
         
         NSUInteger sectionsCount = 0;
         
@@ -768,6 +769,21 @@
     rectToScrollTo.origin.x -= selectedSegmentOffset;
     rectToScrollTo.size.width += selectedSegmentOffset * 2;
     [self.scrollView scrollRectToVisible:rectToScrollTo animated:animated];
+}
+
+#pragma mark - Index Touch
+
+- (void)touchIndex:(NSUInteger)index {
+    [self notifyForTouchIndex:index];
+}
+
+- (void)notifyForTouchIndex:(NSInteger)index {
+    if (self.superview)
+        [self sendActionsForControlEvents:UIControlEventTouchUpInside];
+    
+    if (self.indexTouchBlock) {
+        self.indexTouchBlock(index);
+    }
 }
 
 #pragma mark - Index Change

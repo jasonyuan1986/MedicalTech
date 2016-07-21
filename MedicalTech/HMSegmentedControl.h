@@ -11,6 +11,7 @@
 @class HMSegmentedControl;
 
 typedef void (^IndexChangeBlock)(NSInteger index);
+typedef void (^IndexTouchBlock)(NSInteger index);
 typedef NSAttributedString *(^HMTitleFormatterBlock)(HMSegmentedControl *segmentedControl, NSString *title, NSUInteger index, BOOL selected);
 
 typedef enum {
@@ -61,6 +62,13 @@ typedef enum {
  Alternativly, you could use `addTarget:action:forControlEvents:`
  */
 @property (nonatomic, copy) IndexChangeBlock indexChangeBlock;
+
+/**
+ Provide a block to be executed when touch index.
+ 
+ Alternativly, you could use `addTarget:action:forControlEvents:`
+ */
+@property (nonatomic, copy) IndexTouchBlock indexTouchBlock;
 
 /**
  Used to apply custom text styling to titles when set.
@@ -224,6 +232,7 @@ typedef enum {
 - (instancetype)initWithSectionImages:(NSArray *)sectionImages sectionSelectedImages:(NSArray *)sectionSelectedImages titlesForSections:(NSArray *)sectiontitles;
 - (void)setSelectedSegmentIndex:(NSUInteger)index animated:(BOOL)animated;
 - (void)setIndexChangeBlock:(IndexChangeBlock)indexChangeBlock;
+- (void)setIndexTouchBlock:(IndexTouchBlock)indexTouchBlock;
 - (void)setTitleFormatter:(HMTitleFormatterBlock)titleFormatter;
 
 @end
