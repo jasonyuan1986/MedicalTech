@@ -31,11 +31,12 @@
                         <viewControllerLayoutGuide type="bottom" id="jyt-gp-xaC"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ht5-BO-6Og">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="医学移动教育平台" id="BKw-aO-y1N"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eEc-pA-Rz7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
