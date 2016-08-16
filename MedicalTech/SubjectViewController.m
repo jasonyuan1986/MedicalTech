@@ -44,6 +44,7 @@
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    [manager.requestSerializer setValue:HEADERTOKEN forHTTPHeaderField:@"token"];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
     [manager GET:CATALOGTREE parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         
@@ -178,6 +179,7 @@
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    [manager.requestSerializer setValue:HEADERTOKEN forHTTPHeaderField:@"token"];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
     [manager GET:[NSString stringWithFormat:@"%@%@___1_20.do", CATALOGVIDEOLIST, subjectId] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         
@@ -349,6 +351,7 @@
             UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleDone target:nil action:nil];
             self.navigationItem.backBarButtonItem = barButtonItem;
             self.playerViewController.exam_id = [dictionary objectForKey:@"exam_id"];
+            self.playerViewController.subject_id = [dictionary objectForKey:@"subject_id"];
             [self.navigationController pushViewController:self.playerViewController animated:YES];
         }
     }

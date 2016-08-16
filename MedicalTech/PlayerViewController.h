@@ -11,5 +11,6 @@
 @interface PlayerViewController : UIViewController
 
 @property (nonatomic, strong) NSNumber *exam_id;
+@property (nonatomic, strong) NSNumber *subject_id;
 
 @end

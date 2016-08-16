@@ -10,6 +10,7 @@ target 'MedicalTech' do
   pod 'Masonry', '~> 1.0.1'
   pod 'MBProgressHUD', '~> 0.9.2'
   pod 'DZVideoPlayerViewController', '~> 0.4.0'
+  pod 'MMDrawerController', '~> 0.6.0'
 
   target 'MedicalTechTests' do
     inherit! :search_paths

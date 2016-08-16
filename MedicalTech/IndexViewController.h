@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol IndexViewDelegate <NSObject>
+
+- (void)relogin;
+
+@end
+
 @interface IndexViewController : UIViewController
+
+@property (nonatomic, assign) id<IndexViewDelegate> delegate;
 
 @end

@@ -9,6 +9,20 @@
 /* Begin PBXBuildFile section */
 		35814269906F36F5C4FC10D8 /* libPods-MedicalTechTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 768BFE986A470FF9755CC86B /* libPods-MedicalTechTests.a */; };
 		896C13F3F28D0E5DD49CBE5D /* libPods-MedicalTech.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 488ACB082AA353EC591E2155 /* libPods-MedicalTech.a */; };
+		960BFC4A1D544926006AE57E /* MBProgressUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 960BFC491D544926006AE57E /* MBProgressUtil.m */; };
+		960CE8BF1D61AC9B00DF4E32 /* AdvService.m in Sources */ = {isa = PBXBuildFile; fileRef = 960CE8BE1D61AC9B00DF4E32 /* AdvService.m */; };
+		960CE8C21D61B10000DF4E32 /* CourseMovieListService.m in Sources */ = {isa = PBXBuildFile; fileRef = 960CE8C11D61B10000DF4E32 /* CourseMovieListService.m */; };
+		960DBFED1D48568000B96D00 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 960DBFEC1D48568000B96D00 /* LoginViewController.m */; };
+		960DCD581D62CB2100236868 /* RelatedCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 960DCD571D62CB2100236868 /* RelatedCollectionViewCell.m */; };
+		960DCD5C1D62ECC000236868 /* MyCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 960DCD5B1D62ECC000236868 /* MyCourseViewController.m */; };
+		960DCD5F1D62F1D800236868 /* MyCourseService.m in Sources */ = {isa = PBXBuildFile; fileRef = 960DCD5E1D62F1D800236868 /* MyCourseService.m */; };
+		96182AB21D51C529004A1A37 /* LoginNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96182AB11D51C529004A1A37 /* LoginNavigationController.m */; };
+		96182AB51D51C53B004A1A37 /* ResetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96182AB41D51C53B004A1A37 /* ResetPasswordViewController.m */; };
+		96182ABC1D51D466004A1A37 /* SMSService.m in Sources */ = {isa = PBXBuildFile; fileRef = 96182ABB1D51D466004A1A37 /* SMSService.m */; };
+		96182ABF1D51D79F004A1A37 /* RegisterService.m in Sources */ = {isa = PBXBuildFile; fileRef = 96182ABE1D51D79F004A1A37 /* RegisterService.m */; };
+		961BFF131D508B8A009A835E /* GetSmsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 961BFF121D508B8A009A835E /* GetSmsViewController.m */; };
+		961BFF161D50922F009A835E /* SetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 961BFF151D50922F009A835E /* SetPasswordViewController.m */; };
+		961BFF191D50923D009A835E /* LinkCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 961BFF181D50923D009A835E /* LinkCodeViewController.m */; };
 		9648E06B1D2E020300A3A90E /* KNBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9648E0601D2E020300A3A90E /* KNBannerView.m */; };
 		9648E06C1D2E020300A3A90E /* KNCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9648E0621D2E020300A3A90E /* KNCollectionViewCell.m */; };
 		9648E06D1D2E020300A3A90E /* KNJudgementTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 9648E0641D2E020300A3A90E /* KNJudgementTool.m */; };
@@ -23,6 +37,7 @@
 		9695DE001D392B3900BAE7C2 /* SubjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9695DDFF1D392B3900BAE7C2 /* SubjectViewController.m */; };
 		96A077C81D28E0450089C0A9 /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A077C71D28E0450089C0A9 /* HMSegmentedControl.m */; };
 		96A132EA1D3FAC410000699D /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A132E91D3FAC410000699D /* PlayerViewController.m */; };
+		96E50E001D47183E0052BF64 /* LeftSideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E50DFF1D47183E0052BF64 /* LeftSideViewController.m */; };
 		96F1332B1D2642B70097A7D3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F1332A1D2642B70097A7D3 /* main.m */; };
 		96F1332E1D2642B70097A7D3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F1332D1D2642B70097A7D3 /* AppDelegate.m */; };
 		96F133341D2642B70097A7D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96F133321D2642B70097A7D3 /* Main.storyboard */; };
@@ -60,6 +75,34 @@
 		63968919CBCB57FC9520AB6C /* Pods-MedicalTechTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MedicalTechTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MedicalTechTests/Pods-MedicalTechTests.release.xcconfig"; sourceTree = "<group>"; };
 		768BFE986A470FF9755CC86B /* libPods-MedicalTechTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MedicalTechTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9339BD68C01B53D9EDB46908 /* libPods-MedicalTechUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MedicalTechUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		960BFC481D544926006AE57E /* MBProgressUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressUtil.h; sourceTree = "<group>"; };
+		960BFC491D544926006AE57E /* MBProgressUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressUtil.m; sourceTree = "<group>"; };
+		960CE8BD1D61AC9B00DF4E32 /* AdvService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvService.h; sourceTree = "<group>"; };
+		960CE8BE1D61AC9B00DF4E32 /* AdvService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvService.m; sourceTree = "<group>"; };
+		960CE8C01D61B10000DF4E32 /* CourseMovieListService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseMovieListService.h; sourceTree = "<group>"; };
+		960CE8C11D61B10000DF4E32 /* CourseMovieListService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseMovieListService.m; sourceTree = "<group>"; };
+		960DBFEB1D48568000B96D00 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		960DBFEC1D48568000B96D00 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		960DCD561D62CB2100236868 /* RelatedCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RelatedCollectionViewCell.h; sourceTree = "<group>"; };
+		960DCD571D62CB2100236868 /* RelatedCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RelatedCollectionViewCell.m; sourceTree = "<group>"; };
+		960DCD5A1D62ECC000236868 /* MyCourseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCourseViewController.h; sourceTree = "<group>"; };
+		960DCD5B1D62ECC000236868 /* MyCourseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCourseViewController.m; sourceTree = "<group>"; };
+		960DCD5D1D62F1D800236868 /* MyCourseService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCourseService.h; sourceTree = "<group>"; };
+		960DCD5E1D62F1D800236868 /* MyCourseService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCourseService.m; sourceTree = "<group>"; };
+		96182AB01D51C529004A1A37 /* LoginNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginNavigationController.h; sourceTree = "<group>"; };
+		96182AB11D51C529004A1A37 /* LoginNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginNavigationController.m; sourceTree = "<group>"; };
+		96182AB31D51C53B004A1A37 /* ResetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResetPasswordViewController.h; sourceTree = "<group>"; };
+		96182AB41D51C53B004A1A37 /* ResetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResetPasswordViewController.m; sourceTree = "<group>"; };
+		96182ABA1D51D466004A1A37 /* SMSService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSService.h; sourceTree = "<group>"; };
+		96182ABB1D51D466004A1A37 /* SMSService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSService.m; sourceTree = "<group>"; };
+		96182ABD1D51D79F004A1A37 /* RegisterService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterService.h; sourceTree = "<group>"; };
+		96182ABE1D51D79F004A1A37 /* RegisterService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterService.m; sourceTree = "<group>"; };
+		961BFF111D508B8A009A835E /* GetSmsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetSmsViewController.h; sourceTree = "<group>"; };
+		961BFF121D508B8A009A835E /* GetSmsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetSmsViewController.m; sourceTree = "<group>"; };
+		961BFF141D50922F009A835E /* SetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetPasswordViewController.h; sourceTree = "<group>"; };
+		961BFF151D50922F009A835E /* SetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetPasswordViewController.m; sourceTree = "<group>"; };
+		961BFF171D50923D009A835E /* LinkCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkCodeViewController.h; sourceTree = "<group>"; };
+		961BFF181D50923D009A835E /* LinkCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkCodeViewController.m; sourceTree = "<group>"; };
 		9648E05F1D2E020300A3A90E /* KNBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KNBannerView.h; sourceTree = "<group>"; };
 		9648E0601D2E020300A3A90E /* KNBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KNBannerView.m; sourceTree = "<group>"; };
 		9648E0611D2E020300A3A90E /* KNCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KNCollectionViewCell.h; sourceTree = "<group>"; };
@@ -91,6 +134,8 @@
 		96A077C71D28E0450089C0A9 /* HMSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSegmentedControl.m; sourceTree = "<group>"; };
 		96A132E81D3FAC410000699D /* PlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerViewController.h; sourceTree = "<group>"; };
 		96A132E91D3FAC410000699D /* PlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerViewController.m; sourceTree = "<group>"; };
+		96E50DFE1D47183E0052BF64 /* LeftSideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftSideViewController.h; sourceTree = "<group>"; };
+		96E50DFF1D47183E0052BF64 /* LeftSideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftSideViewController.m; sourceTree = "<group>"; };
 		96F133261D2642B70097A7D3 /* MedicalTech.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedicalTech.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96F1332A1D2642B70097A7D3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		96F1332C1D2642B70097A7D3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -154,6 +199,108 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		960BFC471D5448F5006AE57E /* MBProgressTips */ = {
+			isa = PBXGroup;
+			children = (
+				960BFC481D544926006AE57E /* MBProgressUtil.h */,
+				960BFC491D544926006AE57E /* MBProgressUtil.m */,
+			);
+			name = MBProgressTips;
+			sourceTree = "<group>";
+		};
+		960DCD591D62EC8300236868 /* MyCourse */ = {
+			isa = PBXGroup;
+			children = (
+				960DCD5A1D62ECC000236868 /* MyCourseViewController.h */,
+				960DCD5B1D62ECC000236868 /* MyCourseViewController.m */,
+			);
+			name = MyCourse;
+			sourceTree = "<group>";
+		};
+		96182AB61D51D35B004A1A37 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				96182ABA1D51D466004A1A37 /* SMSService.h */,
+				96182ABB1D51D466004A1A37 /* SMSService.m */,
+				96182ABD1D51D79F004A1A37 /* RegisterService.h */,
+				96182ABE1D51D79F004A1A37 /* RegisterService.m */,
+				960CE8BD1D61AC9B00DF4E32 /* AdvService.h */,
+				960CE8BE1D61AC9B00DF4E32 /* AdvService.m */,
+				960CE8C01D61B10000DF4E32 /* CourseMovieListService.h */,
+				960CE8C11D61B10000DF4E32 /* CourseMovieListService.m */,
+				960DCD5D1D62F1D800236868 /* MyCourseService.h */,
+				960DCD5E1D62F1D800236868 /* MyCourseService.m */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		961BFF0C1D508ADA009A835E /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				96182AB01D51C529004A1A37 /* LoginNavigationController.h */,
+				96182AB11D51C529004A1A37 /* LoginNavigationController.m */,
+				960DBFEB1D48568000B96D00 /* LoginViewController.h */,
+				960DBFEC1D48568000B96D00 /* LoginViewController.m */,
+				96182AB31D51C53B004A1A37 /* ResetPasswordViewController.h */,
+				96182AB41D51C53B004A1A37 /* ResetPasswordViewController.m */,
+				961BFF111D508B8A009A835E /* GetSmsViewController.h */,
+				961BFF121D508B8A009A835E /* GetSmsViewController.m */,
+				961BFF141D50922F009A835E /* SetPasswordViewController.h */,
+				961BFF151D50922F009A835E /* SetPasswordViewController.m */,
+				961BFF171D50923D009A835E /* LinkCodeViewController.h */,
+				961BFF181D50923D009A835E /* LinkCodeViewController.m */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		961BFF0D1D508B08009A835E /* Index */ = {
+			isa = PBXGroup;
+			children = (
+				96F1335F1D2645310097A7D3 /* MedicalNavigationViewController.h */,
+				96F133601D2645310097A7D3 /* MedicalNavigationViewController.m */,
+				96F1335C1D2643280097A7D3 /* IndexViewController.h */,
+				96F1335D1D2643280097A7D3 /* IndexViewController.m */,
+				9687F72E1D3218F60037AAEA /* PlatformTableViewCell.h */,
+				9687F72F1D3218F60037AAEA /* PlatformTableViewCell.m */,
+				96879A4F1D3687FB000B8262 /* StudyCollectionViewCell.h */,
+				96879A501D3687FB000B8262 /* StudyCollectionViewCell.m */,
+			);
+			name = Index;
+			sourceTree = "<group>";
+		};
+		961BFF0E1D508B23009A835E /* Subject */ = {
+			isa = PBXGroup;
+			children = (
+				9695DDFE1D392B3900BAE7C2 /* SubjectViewController.h */,
+				9695DDFF1D392B3900BAE7C2 /* SubjectViewController.m */,
+				968D36CA1D3E6C74000E1102 /* TitleCollectionViewCell.h */,
+				968D36CB1D3E6C74000E1102 /* TitleCollectionViewCell.m */,
+				968D36CD1D3F1A8D000E1102 /* ContentCollectionViewCell.h */,
+				968D36CE1D3F1A8D000E1102 /* ContentCollectionViewCell.m */,
+			);
+			name = Subject;
+			sourceTree = "<group>";
+		};
+		961BFF0F1D508B3D009A835E /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				96A132E81D3FAC410000699D /* PlayerViewController.h */,
+				96A132E91D3FAC410000699D /* PlayerViewController.m */,
+				960DCD561D62CB2100236868 /* RelatedCollectionViewCell.h */,
+				960DCD571D62CB2100236868 /* RelatedCollectionViewCell.m */,
+			);
+			name = Player;
+			sourceTree = "<group>";
+		};
+		961BFF101D508B50009A835E /* Drawer */ = {
+			isa = PBXGroup;
+			children = (
+				96E50DFE1D47183E0052BF64 /* LeftSideViewController.h */,
+				96E50DFF1D47183E0052BF64 /* LeftSideViewController.m */,
+			);
+			name = Drawer;
+			sourceTree = "<group>";
+		};
 		9648E05E1D2E01D700A3A90E /* KNBannerView */ = {
 			isa = PBXGroup;
 			children = (
@@ -208,6 +355,14 @@
 			isa = PBXGroup;
 			children = (
 				9648E0711D2E043D00A3A90E /* PrefixHeader.pch */,
+				960BFC471D5448F5006AE57E /* MBProgressTips */,
+				961BFF101D508B50009A835E /* Drawer */,
+				961BFF0F1D508B3D009A835E /* Player */,
+				961BFF0E1D508B23009A835E /* Subject */,
+				960DCD591D62EC8300236868 /* MyCourse */,
+				961BFF0D1D508B08009A835E /* Index */,
+				961BFF0C1D508ADA009A835E /* Login */,
+				96182AB61D51D35B004A1A37 /* Service */,
 				9648E05E1D2E01D700A3A90E /* KNBannerView */,
 				96A077BF1D28DFDF0089C0A9 /* HMSegmentedControl */,
 				96F1332C1D2642B70097A7D3 /* AppDelegate.h */,
@@ -217,24 +372,8 @@
 				96F133371D2642B70097A7D3 /* LaunchScreen.storyboard */,
 				96F1333A1D2642B70097A7D3 /* Info.plist */,
 				96F133291D2642B70097A7D3 /* Supporting Files */,
-				96F1335C1D2643280097A7D3 /* IndexViewController.h */,
-				96F1335D1D2643280097A7D3 /* IndexViewController.m */,
-				96F1335F1D2645310097A7D3 /* MedicalNavigationViewController.h */,
-				96F133601D2645310097A7D3 /* MedicalNavigationViewController.m */,
-				9687F72E1D3218F60037AAEA /* PlatformTableViewCell.h */,
-				9687F72F1D3218F60037AAEA /* PlatformTableViewCell.m */,
 				968A11321D33E01E00FEDDD4 /* UnicodeToNSStringUtil.h */,
 				968A11331D33E01E00FEDDD4 /* UnicodeToNSStringUtil.m */,
-				96879A4F1D3687FB000B8262 /* StudyCollectionViewCell.h */,
-				96879A501D3687FB000B8262 /* StudyCollectionViewCell.m */,
-				9695DDFE1D392B3900BAE7C2 /* SubjectViewController.h */,
-				9695DDFF1D392B3900BAE7C2 /* SubjectViewController.m */,
-				968D36CA1D3E6C74000E1102 /* TitleCollectionViewCell.h */,
-				968D36CB1D3E6C74000E1102 /* TitleCollectionViewCell.m */,
-				968D36CD1D3F1A8D000E1102 /* ContentCollectionViewCell.h */,
-				968D36CE1D3F1A8D000E1102 /* ContentCollectionViewCell.m */,
-				96A132E81D3FAC410000699D /* PlayerViewController.h */,
-				96A132E91D3FAC410000699D /* PlayerViewController.m */,
 			);
 			path = MedicalTech;
 			sourceTree = "<group>";
@@ -539,21 +678,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				96879A511D3687FB000B8262 /* StudyCollectionViewCell.m in Sources */,
+				96182AB51D51C53B004A1A37 /* ResetPasswordViewController.m in Sources */,
 				96F1332E1D2642B70097A7D3 /* AppDelegate.m in Sources */,
+				96E50E001D47183E0052BF64 /* LeftSideViewController.m in Sources */,
 				968D36CF1D3F1A8D000E1102 /* ContentCollectionViewCell.m in Sources */,
+				960DBFED1D48568000B96D00 /* LoginViewController.m in Sources */,
 				96F1332B1D2642B70097A7D3 /* main.m in Sources */,
+				96182ABC1D51D466004A1A37 /* SMSService.m in Sources */,
 				9648E0701D2E020300A3A90E /* UIView+Extension.m in Sources */,
+				960DCD5C1D62ECC000236868 /* MyCourseViewController.m in Sources */,
 				9648E06E1D2E020300A3A90E /* NSData+KNCache.m in Sources */,
 				96F133611D2645310097A7D3 /* MedicalNavigationViewController.m in Sources */,
 				96F1335E1D2643280097A7D3 /* IndexViewController.m in Sources */,
+				961BFF191D50923D009A835E /* LinkCodeViewController.m in Sources */,
+				960BFC4A1D544926006AE57E /* MBProgressUtil.m in Sources */,
 				9648E06C1D2E020300A3A90E /* KNCollectionViewCell.m in Sources */,
 				96A077C81D28E0450089C0A9 /* HMSegmentedControl.m in Sources */,
+				960DCD581D62CB2100236868 /* RelatedCollectionViewCell.m in Sources */,
 				9648E06D1D2E020300A3A90E /* KNJudgementTool.m in Sources */,
 				9648E06B1D2E020300A3A90E /* KNBannerView.m in Sources */,
 				9687F7301D3218F60037AAEA /* PlatformTableViewCell.m in Sources */,
+				960CE8C21D61B10000DF4E32 /* CourseMovieListService.m in Sources */,
+				960DCD5F1D62F1D800236868 /* MyCourseService.m in Sources */,
 				9648E06F1D2E020300A3A90E /* NSString+hash.m in Sources */,
+				961BFF161D50922F009A835E /* SetPasswordViewController.m in Sources */,
 				968D36CC1D3E6C74000E1102 /* TitleCollectionViewCell.m in Sources */,
+				960CE8BF1D61AC9B00DF4E32 /* AdvService.m in Sources */,
+				96182ABF1D51D79F004A1A37 /* RegisterService.m in Sources */,
 				968A11341D33E01E00FEDDD4 /* UnicodeToNSStringUtil.m in Sources */,
+				961BFF131D508B8A009A835E /* GetSmsViewController.m in Sources */,
+				96182AB21D51C529004A1A37 /* LoginNavigationController.m in Sources */,
 				9695DE001D392B3900BAE7C2 /* SubjectViewController.m in Sources */,
 				96A132EA1D3FAC410000699D /* PlayerViewController.m in Sources */,
 			);
@@ -715,6 +869,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.jason.MedicalTech;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Debug;
@@ -735,6 +890,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.jason.MedicalTech;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Release;

@@ -18,20 +18,31 @@
 #import <AFNetworking/UIKit+AFNetworking.h>
 #import <Masonry/Masonry.h>
 #import <MBProgressHUD/MBProgressHUD.h>
+#import "MBProgressUtil.h"
+#import "UIViewController+MMDrawerController.h"
 
 #define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
 #define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
+#define MAINCOLOR [UIColor colorWithRed:30.0/255.0 green:198.0/255.0 blue:180.0/255.0 alpha:1.0]
+#define HEADERTOKEN [[NSUserDefaults standardUserDefaults] objectForKey:@"token"]
 
-#define HOST @"http://tfxyztyh.vicp.cc:99/mcme/"
+#define HOST @"http://tfxyztyh.vicp.cc:99/"
 
-#define ADVERTISEMENT [HOST stringByAppendingString:@"cmdAdv/getCmeAdvList_23"]
-#define SUBJECTLIST [HOST stringByAppendingString:@"cmeSubject/getCmeSubjectList_"]
-#define SUBJECTTREELIST [HOST stringByAppendingString:@"cmeSubject/getCmeSubjectTreeList.do"]
-#define COURSEMOVIELIST [HOST stringByAppendingString:@"cmeCoursesExam/getCourseMovieList_"]
-#define RECOMMENDLIST [HOST stringByAppendingString:@"cmeCoursesExam/getCourseMovieList___1_1_10"]
-#define LATESTLIST [HOST stringByAppendingString:@"cmeCoursesExam/getCourseMovieList__1__1_4"]
-#define CATALOGTREE [HOST stringByAppendingString:@"cmeSubject/getCmeSubjectTreeList"]
-#define CATALOGVIDEOLIST [HOST stringByAppendingString:@"cmeCoursesExam/getCourseMovieList_"]
-#define VIDEODETAIL [HOST stringByAppendingString:@"cmeCoursesExam/getCourseMovie_"]
+#define ADVERTISEMENT [HOST stringByAppendingString:@"mcme/cmdAdv/getCmeAdvList"]
+#define SUBJECTLIST [HOST stringByAppendingString:@"mcme/cmeSubject/getCmeSubjectList_"]
+#define SUBJECTTREELIST [HOST stringByAppendingString:@"mcme/cmeSubject/getCmeSubjectTreeList.do"]
+#define COURSEMOVIELIST [HOST stringByAppendingString:@"mcme/cmeCoursesExam/getCourseMovieList"]
+#define RECOMMENDLIST [HOST stringByAppendingString:@"mcme/cmeCoursesExam/getCourseMovieList___1_1_10"]
+#define LATESTLIST [HOST stringByAppendingString:@"mcme/cmeCoursesExam/getCourseMovieList__1__1_4"]
+#define CATALOGTREE [HOST stringByAppendingString:@"mcme/cmeSubject/getCmeSubjectTreeList"]
+#define CATALOGVIDEOLIST [HOST stringByAppendingString:@"mcme/cmeCoursesExam/getCourseMovieList_"]
+#define VIDEODETAIL [HOST stringByAppendingString:@"mcme/cmeCoursesExam/getCourseMovie_"]
+#define LOGIN [HOST stringByAppendingString:@"uniform/login?"]
+#define GETSMS [HOST stringByAppendingString:@"uniform/sms/sendSMS?"]
+#define VALIDSMS [HOST stringByAppendingString:@"uniform/sms/validSmsCode?"]
+#define REGISTER [HOST stringByAppendingString:@"uniform/register?"]
+#define SETNEWPASSWORD [HOST stringByAppendingString:@"uniform/setPwd?"]
+#define BINDNO [HOST stringByAppendingString:@"uniform/bindNo?"]
+#define RELATEDMOVIE [HOST stringByAppendingString:@"mcme/cmeCoursesExam/getCourseMovieList_"]
 
 #endif /* PrefixHeader_pch */

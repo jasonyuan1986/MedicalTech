@@ -12,10 +12,12 @@
 #import "PlatformTableViewCell.h"
 #import "StudyCollectionViewCell.h"
 #import "SubjectViewController.h"
+#import "AdvService.h"
+#import "CourseMovieListService.h"
 
 @interface IndexViewController () <UIScrollViewDelegate, UITableViewDelegate,
-                                    UITableViewDataSource, UICollectionViewDelegate,
-                                    UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+    UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout,
+    UIGestureRecognizerDelegate, AdvServiceDelegate, CourseMovieListServiceDelegate>
 
 @property (nonatomic, strong) UIScrollView *myScrollView;
 @property (nonatomic, strong) KNBannerView *myBannerView;
@@ -30,56 +32,20 @@
 
 @implementation IndexViewController
 
+@synthesize delegate;
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
-    [MBProgressHUD showHUDAddedTo:self.platformTableView animated:YES].dimBackground = YES;
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
-    [manager GET:RECOMMENDLIST parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
-    
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
-        self.platformArray = [dictionary objectForKey:@"data"];
-        NSLog(@"%@", self.platformArray);
-        [self.platformTableView reloadData];
-        [MBProgressHUD hideHUDForView:self.platformTableView animated:YES];
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        [MBProgressHUD hideHUDForView:self.platformTableView animated:YES];
-    }];
-    
-    [MBProgressHUD showHUDAddedTo:self.studyCollectionView animated:YES].dimBackground = YES;
-    [manager GET:LATESTLIST parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
-        
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
-        self.studyArray = [dictionary objectForKey:@"data"];
-        NSLog(@"%@", self.studyArray);
-        [self.studyCollectionView reloadData];
-        [MBProgressHUD hideHUDForView:self.studyCollectionView animated:YES];
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        [MBProgressHUD hideHUDForView:self.studyCollectionView animated:YES];
-    }];
-    
-    [manager GET:ADVERTISEMENT parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
-        
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
-        NSArray *array = [dictionary objectForKey:@"data"];
-        NSMutableArray *imgArr = [NSMutableArray array];
-        for (NSDictionary *imgDictionary in array) {
-            [imgArr addObject:[imgDictionary objectForKey:@"img"]];
-        }
-        self.myBannerView.netWorkImgArr = imgArr;
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        
-    }];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.title = @"医学移动教育平台";
+    
+    UIBarButtonItem *buttonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"peopleicon"] style:UIBarButtonItemStylePlain target:self action:@selector(peopleIconButton:)];
+    self.navigationItem.leftBarButtonItem = buttonItem;
+    
     self.segmentedControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"医教平台", @"在线学习", @"病例学习", @"模拟考试"]];
     
     self.segmentedControl.frame = CGRectMake(0, 64, SCREEN_WIDTH, 41);
@@ -103,6 +69,7 @@
     self.myScrollView.contentSize = CGSizeMake(SCREEN_WIDTH * 4, SCREEN_HEIGHT - 105.0);
     self.myScrollView.delegate = self;
     [self.myScrollView scrollRectToVisible:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 105.0) animated:NO];
+    self.myScrollView.scrollEnabled = NO;
     [self.view addSubview:self.myScrollView];
     
     // 设置 网络 轮播图
@@ -110,11 +77,20 @@
     self.myBannerView = [KNBannerView bannerViewWithLocationImagesArr:imgArr frame:CGRectMake(0, 0.0, SCREEN_WIDTH, SCREEN_WIDTH/2.0)];
     self.myBannerView.pageControlStyle = KNPageControlStyleMiddle;
     self.myBannerView.placeHolder = @"3";
+    [AdvService sharedInstance].delegate = self;
+    [[AdvService sharedInstance] getAdvList:@"23"];
     [self.myScrollView addSubview:self.myBannerView];
     
     self.platformTableView = [[UITableView alloc] initWithFrame:CGRectMake(0.0, SCREEN_WIDTH/2.0, SCREEN_WIDTH, SCREEN_HEIGHT -SCREEN_WIDTH/2.0 - 105.0)];
     self.platformTableView.delegate = self;
     self.platformTableView.dataSource = self;
+    CourseMovieListService *recommendService = [[CourseMovieListService alloc] init];
+    recommendService.tag = 1;
+    recommendService.delegate = self;
+    [recommendService getCourseMovieList:@"" orderType:@""
+                               recommend:@"1"   pageNo:1
+                                pageSize:10];
+    
     [self.myScrollView addSubview:self.platformTableView];
     
     UIView *studyHeaderView = [[UIView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH, 15.0, SCREEN_WIDTH, 62.0 * SCREEN_WIDTH/414.0)];
@@ -133,6 +109,12 @@
     self.studyCollectionView.dataSource = self;
     self.studyCollectionView.delegate = self;
     [self.studyCollectionView registerClass:[StudyCollectionViewCell class] forCellWithReuseIdentifier:@"studyCell"];
+    CourseMovieListService *latestService = [[CourseMovieListService alloc] init];
+    latestService.tag = 2;
+    latestService.delegate = self;
+    [latestService getCourseMovieList:@"" orderType:@"1"
+                               recommend:@""   pageNo:1
+                                pageSize:4];
     [self.myScrollView addSubview:self.studyCollectionView];
     
     UIView *splitView = [[UIView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH, 388.0 * SCREEN_WIDTH/414.0 + 15.0, SCREEN_WIDTH, 1.0)];
@@ -184,6 +166,10 @@
     label2.textAlignment = NSTextAlignmentCenter;
 //    label2.backgroundColor = [UIColor greenColor];
     [self.myScrollView addSubview:label2];
+}
+
+- (void)peopleIconButton:(id)sender {
+    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
 }
 
 - (void)goToSubjectView:(id)sender {
@@ -349,6 +335,39 @@
     [self.segmentedControl setSelectedSegmentIndex:page animated:YES];
 }
 
+#pragma mark - AdvService delegate
 
+- (void)returnAdvList:(NSArray *)dataArray {
+    NSMutableArray *imgArr = [NSMutableArray array];
+    for (NSDictionary *imgDictionary in dataArray) {
+        [imgArr addObject:[imgDictionary objectForKey:@"img"]];
+    }
+    self.myBannerView.netWorkImgArr = imgArr;
+}
+
+#pragma mark - Coure movie list delegate
+
+- (void)returnCourseMovieList:(NSArray *)dataArray Tag:(int)tag {
+    switch (tag) {
+        case 1:
+        {
+            self.platformArray = dataArray;
+            [self.platformTableView reloadData];
+            break;
+        }
+        case 2:
+        {
+            self.studyArray = dataArray;
+            [self.studyCollectionView reloadData];
+            break;
+        }
+        default:
+            break;
+    }
+}
+
+- (void)relogin {
+    [self.delegate relogin];
+}
 
 @end
