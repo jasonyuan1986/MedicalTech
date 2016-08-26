@@ -18,6 +18,8 @@
 
 - (void)bindNoSuccess;
 
+- (void)resetPasswordSuccess;
+
 @end
 
 @interface RegisterService : NSObject
@@ -29,5 +31,7 @@
 - (void)setNewPassword:(NSString *)newPassword;
 
 - (void)bindNo:(NSString *)number;
+
+- (void)resetPassword:(NSString *)mobileNo authCode:(NSString *)authCode newPassword:(NSString *)password;
 
 @end

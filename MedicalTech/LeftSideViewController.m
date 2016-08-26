@@ -7,8 +7,10 @@
 //
 
 #import "LeftSideViewController.h"
+#import "SettingsViewController.h"
+#import "UserInfoService.h"
 
-@interface LeftSideViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface LeftSideViewController () <UITableViewDelegate, UITableViewDataSource, UserInfoServiceDelegate>
 {
     UIImageView *avatarImage;
     UIButton *takePhoto;
@@ -20,9 +22,13 @@
     UITableView *listTableView;
 }
 
+@property (nonatomic, strong) SettingsViewController *settingsViewController;
+
 @end
 
 @implementation LeftSideViewController
+
+@synthesize delegate;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -42,6 +48,7 @@
     
     takePhoto = [[UIButton alloc] init];
     [takePhoto setImage:[UIImage imageNamed:@"takephoto"] forState:UIControlStateNormal];
+    takePhoto.hidden = YES;
     [self.view addSubview:takePhoto];
     
     [takePhoto mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -104,6 +111,10 @@
         make.left.equalTo(emailLabel.superview).offset(21);
         make.size.mas_equalTo(CGSizeMake(160, 16));
     }];
+    
+    UserInfoService *userInfoService = [[UserInfoService alloc] init];
+    userInfoService.delegate = self;
+    [userInfoService getUserInfo];
     
     listTableView = [[UITableView alloc] init];
     [listTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"listTableCell"];
@@ -180,7 +191,7 @@
              }];
              
              UILabel *contentLabel = [[UILabel alloc] init];
-             contentLabel.text = @"我的订阅";
+             contentLabel.text = @"我的课程";
              contentLabel.font = [UIFont systemFontOfSize:16];
              [cell.contentView addSubview:contentLabel];
              
@@ -309,6 +320,36 @@
     return 64;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    switch (indexPath.row) {
+        case 0:
+        {
+            [self.delegate goToInbox];
+            break;
+        }
+        case 1:
+        {
+            [self.delegate goToMyCourse];
+            break;
+        }
+        case 2:
+        {
+            break;
+        }
+        case 3:
+        {
+            break;
+        }
+        case 4:
+        {
+            [self.delegate goToSettings];
+            break;
+        }
+        default:
+            break;
+    }
+}
+
 /*
 #pragma mark - Navigation
 
@@ -318,5 +359,19 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - UserInfoService delegate
+
+- (void)returnUserInfo:(NSDictionary *)data {
+    nameLabel.text = [data objectForKey:@"userName"];
+    titleLabel.text = [data objectForKey:@"sectionName"];
+    numberLabel.text = [data objectForKey:@"userId"];
+    mobileLabel.text = [data objectForKey:@"telMobile"];
+    emailLabel.text = [data objectForKey:@"email"];
+}
+
+- (void)relogin {
+    
+}
 
 @end

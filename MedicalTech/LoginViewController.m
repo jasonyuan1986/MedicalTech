@@ -11,7 +11,6 @@
 #import "GetSmsViewController.h"
 #import <MMDrawerController/MMDrawerController.h>
 #import "LeftSideViewController.h"
-#import "MedicalNavigationViewController.h"
 #import "IndexViewController.h"
 #import "PlayerViewController.h"
 
@@ -28,6 +27,8 @@
     UIButton *firstLaunch;
     ResetPasswordViewController *resetPasswordViewController;
     GetSmsViewController *getSmsViewController;
+    
+    BOOL willEndEditing;
 }
 
 @property (nonatomic, strong) MMDrawerController *drawerController;
@@ -43,9 +44,13 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"登陆";
-    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleDone target:nil action:nil];
-    self.navigationItem.backBarButtonItem = barButtonItem;
+    
+    [self initUI];
+}
 
+- (void)initUI {
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTaped:)];
+    [self.view addGestureRecognizer:tapGesture];
     
     logoImageView = [[UIImageView alloc] init];
     logoImageView.image = [UIImage imageNamed:@"loginimage"];
@@ -204,6 +209,11 @@
     }];
 }
 
+- (void)viewTaped:(id)sender {
+    [mobileField resignFirstResponder];
+    [passwordField resignFirstResponder];
+}
+
 - (void)forgetPassword:(id)sender {
     if (resetPasswordViewController) {
         [self.navigationController pushViewController:resetPasswordViewController animated:YES];
@@ -240,6 +250,8 @@
 #pragma mark - UITextFieldDelegate
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y - 216, self.view.frame.size.width, self.view.frame.size.height);
+
     if (textField.tag == 1) {
         mobileLabel.textColor = MAINCOLOR;
         mobileField.layer.borderColor = MAINCOLOR.CGColor;
@@ -252,6 +264,8 @@
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
+    self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y + 216, self.view.frame.size.width, self.view.frame.size.height);
+
     if (textField.tag == 1) {
         mobileLabel.textColor = [UIColor blackColor];
         mobileField.layer.borderColor = [UIColor colorWithRed:198.0/255.0 green:198.0/255.0 blue:198.0/255.0 alpha:1.0].CGColor;
@@ -259,6 +273,10 @@
         passwordLabel.textColor = [UIColor blackColor];
         passwordField.layer.borderColor = [UIColor colorWithRed:198.0/255.0 green:198.0/255.0 blue:198.0/255.0 alpha:1.0].CGColor;
     }
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    
 }
 
 @end

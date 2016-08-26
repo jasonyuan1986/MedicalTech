@@ -11,9 +11,11 @@
 #import "KNBannerView.h"
 #import "PlatformTableViewCell.h"
 #import "StudyCollectionViewCell.h"
+#import "MyCourseViewController.h"
 #import "SubjectViewController.h"
 #import "AdvService.h"
 #import "CourseMovieListService.h"
+#import "PlayerViewController.h"
 
 @interface IndexViewController () <UIScrollViewDelegate, UITableViewDelegate,
     UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout,
@@ -27,12 +29,12 @@
 @property (nonatomic, strong) NSArray *platformArray;
 @property (nonatomic, strong) NSArray *studyArray;
 @property (nonatomic, strong) SubjectViewController *subjectViewController;
+@property (nonatomic, strong) MyCourseViewController *myCourseViewController;
+@property (nonatomic, strong) PlayerViewController *playerViewController;
 
 @end
 
 @implementation IndexViewController
-
-@synthesize delegate;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -43,6 +45,11 @@
     // Do any additional setup after loading the view.
     self.title = @"医学移动教育平台";
     
+    [self initUI];
+    [self loadData];
+}
+
+- (void)initUI {
     UIBarButtonItem *buttonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"peopleicon"] style:UIBarButtonItemStylePlain target:self action:@selector(peopleIconButton:)];
     self.navigationItem.leftBarButtonItem = buttonItem;
     
@@ -84,13 +91,6 @@
     self.platformTableView = [[UITableView alloc] initWithFrame:CGRectMake(0.0, SCREEN_WIDTH/2.0, SCREEN_WIDTH, SCREEN_HEIGHT -SCREEN_WIDTH/2.0 - 105.0)];
     self.platformTableView.delegate = self;
     self.platformTableView.dataSource = self;
-    CourseMovieListService *recommendService = [[CourseMovieListService alloc] init];
-    recommendService.tag = 1;
-    recommendService.delegate = self;
-    [recommendService getCourseMovieList:@"" orderType:@""
-                               recommend:@"1"   pageNo:1
-                                pageSize:10];
-    
     [self.myScrollView addSubview:self.platformTableView];
     
     UIView *studyHeaderView = [[UIView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH, 15.0, SCREEN_WIDTH, 62.0 * SCREEN_WIDTH/414.0)];
@@ -109,12 +109,6 @@
     self.studyCollectionView.dataSource = self;
     self.studyCollectionView.delegate = self;
     [self.studyCollectionView registerClass:[StudyCollectionViewCell class] forCellWithReuseIdentifier:@"studyCell"];
-    CourseMovieListService *latestService = [[CourseMovieListService alloc] init];
-    latestService.tag = 2;
-    latestService.delegate = self;
-    [latestService getCourseMovieList:@"" orderType:@"1"
-                               recommend:@""   pageNo:1
-                                pageSize:4];
     [self.myScrollView addSubview:self.studyCollectionView];
     
     UIView *splitView = [[UIView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH, 388.0 * SCREEN_WIDTH/414.0 + 15.0, SCREEN_WIDTH, 1.0)];
@@ -131,11 +125,12 @@
     } else {
         [myLessonButton setImageEdgeInsets:UIEdgeInsetsMake(0, 80, 0, -80)];
     }
-
+    
     [myLessonButton setTitle:@"我的课程" forState:UIControlStateNormal];
     [myLessonButton setTitleColor:[UIColor colorWithRed:0.0/255.0 green:192.0/255.0 blue:179.0/255.0 alpha:1.0] forState:UIControlStateNormal];
     [myLessonButton setTitleEdgeInsets:UIEdgeInsetsMake(0, -30, 0, 30)];
     myLessonButton.backgroundColor = [UIColor whiteColor];
+    [myLessonButton addTarget:self action:@selector(goToMyCourse:) forControlEvents:UIControlEventTouchUpInside];
     [self.myScrollView addSubview:myLessonButton];
     
     UIButton *moreLessonButton = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH + SCREEN_WIDTH/2.0, 388.0 * SCREEN_WIDTH/414.0 + 16.0, SCREEN_WIDTH/2.0, 41.0)];
@@ -155,25 +150,63 @@
     [moreLessonButton addTarget:self action:@selector(goToSubjectView:) forControlEvents:UIControlEventTouchUpInside];
     [self.myScrollView addSubview:moreLessonButton];
     
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(SCREEN_WIDTH * 2, 0.0, SCREEN_WIDTH, SCREEN_HEIGHT - 105.0)];
-    label.text = @"敬请期待";
-    label.textAlignment = NSTextAlignmentCenter;
-//    label.backgroundColor = [UIColor blueColor];
-    [self.myScrollView addSubview:label];
+    UIView *view1 = [[UIView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH * 2, 0.0, SCREEN_WIDTH, SCREEN_HEIGHT - 105.0)];
+    [self.myScrollView addSubview:view1];
     
-    UILabel *label2 = [[UILabel alloc] initWithFrame:CGRectMake(SCREEN_WIDTH * 3, 0.0, SCREEN_WIDTH, SCREEN_HEIGHT - 105.0)];
-    label2.text = @"敬请期待";
-    label2.textAlignment = NSTextAlignmentCenter;
-//    label2.backgroundColor = [UIColor greenColor];
-    [self.myScrollView addSubview:label2];
+    UIImageView *imageview1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"lookingforward"]];
+    [view1 addSubview:imageview1];
+    
+    [imageview1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(view1);
+        make.size.mas_equalTo(CGSizeMake(128, 128));
+    }];
+    
+    UIView *view2 = [[UIView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH * 3, 0.0, SCREEN_WIDTH, SCREEN_HEIGHT - 105.0)];
+    [self.myScrollView addSubview:view2];
+    
+    UIImageView *imageview2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"lookingforward"]];
+    [view2 addSubview:imageview2];
+    
+    [imageview2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(view2);
+        make.size.mas_equalTo(CGSizeMake(128, 128));
+    }];
+}
+
+- (void)loadData {
+    CourseMovieListService *recommendService = [[CourseMovieListService alloc] init];
+    recommendService.tag = 1;
+    recommendService.delegate = self;
+    [recommendService getCourseMovieList:@"" orderType:@""
+                               recommend:@"1"   pageNo:1
+                                pageSize:10];
+    
+    CourseMovieListService *latestService = [[CourseMovieListService alloc] init];
+    latestService.tag = 2;
+    latestService.delegate = self;
+    [latestService getCourseMovieList:@"" orderType:@"1"
+                            recommend:@""   pageNo:1
+                             pageSize:4];
 }
 
 - (void)peopleIconButton:(id)sender {
     [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
 }
 
+- (void)goToMyCourse:(id)sender {
+    if (self.myCourseViewController) {
+        UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleDone target:nil action:nil];
+        self.navigationItem.backBarButtonItem = barButtonItem;
+        [self.navigationController pushViewController:self.myCourseViewController animated:YES];
+    } else {
+        self.myCourseViewController = [[MyCourseViewController alloc] init];
+        UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleDone target:nil action:nil];
+        self.navigationItem.backBarButtonItem = barButtonItem;
+        [self.navigationController pushViewController:self.myCourseViewController animated:YES];
+    }
+}
+
 - (void)goToSubjectView:(id)sender {
-    
     if (self.subjectViewController) {
         UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleDone target:nil action:nil];
         self.navigationItem.backBarButtonItem = barButtonItem;
@@ -273,6 +306,25 @@
     
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSDictionary *dictionary = [self.platformArray objectAtIndex:indexPath.row];
+  
+    if (self.playerViewController) {
+        UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleDone target:nil action:nil];
+        self.navigationItem.backBarButtonItem = barButtonItem;
+        self.playerViewController.exam_id = [dictionary objectForKey:@"exam_id"];
+        self.playerViewController.subject_id = [dictionary objectForKey:@"subject_id"];
+        [self.navigationController pushViewController:self.playerViewController animated:YES];
+    } else {
+        self.playerViewController = [[PlayerViewController alloc] init];
+        UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleDone target:nil action:nil];
+        self.navigationItem.backBarButtonItem = barButtonItem;
+        self.playerViewController.exam_id = [dictionary objectForKey:@"exam_id"];
+        self.playerViewController.subject_id = [dictionary objectForKey:@"subject_id"];
+        [self.navigationController pushViewController:self.playerViewController animated:YES];
+    }
+}
+
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -326,6 +378,25 @@
     return UIEdgeInsetsMake(3.0, 3.0, 3.0, 3.0);
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    NSDictionary *dictionary = [self.studyArray objectAtIndex:indexPath.row];
+    
+    if (self.playerViewController) {
+        UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleDone target:nil action:nil];
+        self.navigationItem.backBarButtonItem = barButtonItem;
+        self.playerViewController.exam_id = [dictionary objectForKey:@"exam_id"];
+        self.playerViewController.subject_id = [dictionary objectForKey:@"subject_id"];
+        [self.navigationController pushViewController:self.playerViewController animated:YES];
+    } else {
+        self.playerViewController = [[PlayerViewController alloc] init];
+        UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleDone target:nil action:nil];
+        self.navigationItem.backBarButtonItem = barButtonItem;
+        self.playerViewController.exam_id = [dictionary objectForKey:@"exam_id"];
+        self.playerViewController.subject_id = [dictionary objectForKey:@"subject_id"];
+        [self.navigationController pushViewController:self.playerViewController animated:YES];
+    }
+}
+
 #pragma mark - UIScrollViewDelegate
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
@@ -364,10 +435,6 @@
         default:
             break;
     }
-}
-
-- (void)relogin {
-    [self.delegate relogin];
 }
 
 @end

@@ -23,6 +23,7 @@
     UIButton *getAuthCode;
     UIButton *next;
     SetPasswordViewController *setPasswordViewController;
+    int count;
 }
 
 @end
@@ -34,10 +35,15 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"验证手机";
-    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleDone target:nil action:nil];
-    self.navigationItem.backBarButtonItem = barButtonItem;
-
     
+    [self initUI];
+}
+
+- (void)cancelRegister:(id)sender {
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
+- (void)initUI {
     UIBarButtonItem *cancelButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(cancelRegister:)];
     self.navigationItem.rightBarButtonItem = cancelButtonItem;
     
@@ -167,11 +173,28 @@
     }];
 }
 
-- (void)cancelRegister:(id)sender {
-    [self.navigationController popToRootViewControllerAnimated:YES];
+- (void)initTimer {
+    getAuthCode.enabled = NO;
+    [getAuthCode setBackgroundColor:[UIColor grayColor]];
+    count = 30;
+    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(authCountDown:) userInfo:nil repeats:YES];
+}
+
+- (void)authCountDown:(id)sender {
+    NSTimer *timer = (NSTimer *)sender;
+    [getAuthCode setTitle:[NSString stringWithFormat:@"%ds后重发", count] forState:UIControlStateNormal];
+    count--;
+    if (count == 0) {
+        [timer invalidate];
+        getAuthCode.enabled = YES;
+        [getAuthCode setBackgroundColor:MAINCOLOR];
+        [getAuthCode setTitle:@"获取验证码" forState:UIControlStateNormal];
+    }
 }
 
 - (void)getAuthCode:(id)sender {
+    [self initTimer];
+    
     [SMSService getSms:mobileField.text smsType:@"2"];
 }
 

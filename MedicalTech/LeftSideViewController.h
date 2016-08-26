@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol LeftSideViewDelegate <NSObject>
+
+- (void)goToInbox;
+- (void)goToSettings;
+- (void)goToMyCourse;
+
+@end
+
 @interface LeftSideViewController : UIViewController
+
+@property (nonatomic, assign) id<LeftSideViewDelegate> delegate;
 
 @end

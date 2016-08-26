@@ -29,59 +29,63 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"绑定工号";
     
+    [self initUI];
+}
+
+- (void)initUI {
     UIBarButtonItem *cancelButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(cancelRegister:)];
     self.navigationItem.rightBarButtonItem = cancelButtonItem;
-
+    
     authPhoneLabel = [[UILabel alloc] init];
     authPhoneLabel.text = @"1.验证手机";
     authPhoneLabel.textColor = [UIColor whiteColor];
     authPhoneLabel.backgroundColor = [UIColor colorWithRed:173.0/255.0 green:173.0/255.0 blue:174.0/255.0 alpha:1.0];
     authPhoneLabel.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:authPhoneLabel];
-
+    
     [authPhoneLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(authPhoneLabel.superview).offset(15);
         make.top.equalTo(authPhoneLabel.superview).offset(100);
         make.size.mas_equalTo(CGSizeMake((SCREEN_WIDTH - 30)/3.0, 30));
     }];
-
+    
     setauthCodeLabel = [[UILabel alloc] init];
     setauthCodeLabel.text = @"2.设置密码";
     setauthCodeLabel.textColor = [UIColor whiteColor];
     setauthCodeLabel.backgroundColor = [UIColor colorWithRed:173.0/255.0 green:173.0/255.0 blue:174.0/255.0 alpha:1.0];
     setauthCodeLabel.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:setauthCodeLabel];
-
+    
     [setauthCodeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(authPhoneLabel.mas_right);
         make.top.equalTo(authPhoneLabel.mas_top);
         make.size.mas_equalTo(CGSizeMake((SCREEN_WIDTH - 30)/3.0, 30));
     }];
-
+    
     linkCodeLabel = [[UILabel alloc] init];
     linkCodeLabel.text = @"3.关联工号";
     linkCodeLabel.textColor = [UIColor whiteColor];
     linkCodeLabel.backgroundColor = MAINCOLOR;
     linkCodeLabel.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:linkCodeLabel];
-
+    
     [linkCodeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(setauthCodeLabel.mas_right);
         make.top.equalTo(authPhoneLabel.mas_top);
         make.size.mas_equalTo(CGSizeMake((SCREEN_WIDTH - 30)/3.0, 30));
     }];
-
+    
     bindLabel = [[UILabel alloc] init];
     bindLabel.text = @"绑定工号";
     bindLabel.font = [UIFont systemFontOfSize:12];
     [self.view addSubview:bindLabel];
-
+    
     [bindLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(authPhoneLabel.mas_bottom).offset(10);
         make.left.equalTo(bindLabel.superview).offset(35);
         make.size.mas_equalTo(CGSizeMake(60, 30));
     }];
-
+    
     bindField = [[UITextField alloc] init];
     bindField.delegate = self;
     bindField.layer.cornerRadius = 5;
@@ -89,7 +93,6 @@
     bindField.layer.borderColor = [UIColor colorWithRed:198.0/255.0 green:198.0/255.0 blue:198.0/255.0 alpha:1.0].CGColor;
     bindField.layer.sublayerTransform = CATransform3DMakeTranslation(8, 0, 0);
     bindField.font = [UIFont systemFontOfSize:16];
-    bindField.secureTextEntry = YES;
     [self.view addSubview:bindField];
     
     [bindField mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -119,8 +122,19 @@
 }
 
 - (void)bindNo:(id)sender {
-    RegisterService *registerService = [[RegisterService alloc] init];
-    [registerService bindNo:bindField.text];
+    UIAlertController *confirmController = [UIAlertController alertControllerWithTitle:@"绑定工号" message:[NSString stringWithFormat:@"确认绑定工号：%@", bindField.text] preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        ;
+    }];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        ;
+    }];
+    [confirmController addAction:cancelAction];
+    [confirmController addAction:okAction];
+    [self presentViewController:confirmController animated:YES completion:nil];
+    
+//    RegisterService *registerService = [[RegisterService alloc] init];
+//    [registerService bindNo:bindField.text];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -7,19 +7,48 @@
 //
 
 #import "MyCourseViewController.h"
+#import "MyCourseTableViewCell.h"
+#import "MyCourseService.h"
+#import "CourseDetailViewController.h"
 
-@interface MyCourseViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface MyCourseViewController () <UITableViewDelegate, UITableViewDataSource, MyCourseServiceDelegate>
 {
     UITableView *myTableView;
+    
 }
+
+@property (nonatomic, strong) NSArray *myCourseArray;
+@property (nonatomic, strong) CourseDetailViewController *courseDetailViewController;
 
 @end
 
 @implementation MyCourseViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    MyCourseService *myCourseService = [[MyCourseService alloc] init];
+    myCourseService.delegate = self;
+    [myCourseService getMyCourse];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.title = @"我的课程";
+    
+    [self initUI];
+    
+    
+}
+
+- (void)initUI {
+    myTableView = [[UITableView alloc] initWithFrame:self.view.bounds];
+    myTableView.delegate = self;
+    myTableView.dataSource = self;
+    [myTableView registerClass:[MyCourseTableViewCell class] forCellReuseIdentifier:@"myCourseCell"];
+    [self.view addSubview:myTableView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,24 +69,28 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return [self.myCourseArray count];
 }
 
-/*
+
  - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
- UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+     MyCourseTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"myCourseCell" forIndexPath:indexPath];
  
- // Configure the cell...
+     // Configure the cell...
+     if (cell == nil) {
+         cell = [[MyCourseTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"myCourseCell"];
+         cell.separatorInset = UIEdgeInsetsZero;
+     }
  
- return cell;
- }
- */
+     [cell setText:[self.myCourseArray objectAtIndex:indexPath.row]];
+     
+     return cell;
+}
+
 
 /*
  // Override to support conditional editing of the table view.
@@ -92,5 +125,33 @@
  return YES;
  }
  */
+
+#pragma mark - UI table view delegate
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 70;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSDictionary *dictionary = [self.myCourseArray objectAtIndex:indexPath.row];
+    
+    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleDone target:nil action:nil];
+    self.navigationItem.backBarButtonItem = barButtonItem;
+    if (self.courseDetailViewController) {
+        self.courseDetailViewController.listId = [dictionary objectForKey:@"listId"];
+        [self.navigationController pushViewController:self.courseDetailViewController animated:YES];
+    } else {
+        self.courseDetailViewController = [[CourseDetailViewController alloc] init];
+        self.courseDetailViewController.listId = [dictionary objectForKey:@"listId"];
+        [self.navigationController pushViewController:self.courseDetailViewController animated:YES];
+    }
+}
+
+#pragma mark - MyCourseService delegate
+
+- (void)returnMyCourse:(NSArray *)dataArray {
+    self.myCourseArray = dataArray;
+    [myTableView reloadData];
+}
 
 @end

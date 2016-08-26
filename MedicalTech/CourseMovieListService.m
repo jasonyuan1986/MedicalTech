@@ -40,17 +40,12 @@
         NSNumber *ret = [dictionary objectForKey:@"ret"];
         
         if ([ret intValue] == 5) {
-            [self.delegate relogin];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"LOGINTIMEOUT" object:nil userInfo:nil];
         } else if ([ret intValue] == 9) {
-            [self.delegate relogin];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"LOGINTIMEOUT" object:nil userInfo:nil];
         } else {
             [self.delegate returnCourseMovieList:[dictionary objectForKey:@"data"] Tag:self.tag];
-        }
-//        self.studyArray = [dictionary objectForKey:@"data"];
-        
-//        NSLog(@"%@", self.studyArray);
-//        [self.studyCollectionView reloadData];
-        
+        }        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
     }];

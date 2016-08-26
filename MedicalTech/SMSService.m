@@ -9,7 +9,12 @@
 #import "SMSService.h"
 
 @implementation SMSService
-
+/**
+ *  获取短信验证码接口
+ *
+ *  @param mobiles 手机号码
+ *  @param smsType 短信类型 1：验证码 2：注册验证码 3：重置密码
+ */
 + (void)getSms:(NSString *)mobiles smsType:(NSString *)smsType {
     NSString *requestUrl = [NSString stringWithFormat:@"%@mobile=%@&smsType=%@", GETSMS, mobiles, smsType];
     

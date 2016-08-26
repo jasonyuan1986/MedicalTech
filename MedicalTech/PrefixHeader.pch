@@ -44,5 +44,11 @@
 #define SETNEWPASSWORD [HOST stringByAppendingString:@"uniform/setPwd?"]
 #define BINDNO [HOST stringByAppendingString:@"uniform/bindNo?"]
 #define RELATEDMOVIE [HOST stringByAppendingString:@"mcme/cmeCoursesExam/getCourseMovieList_"]
+#define MYCOURSE [HOST stringByAppendingString:@"mcme/cmeCoursesExam/getMyCourse"]
+#define LOGOUT [HOST stringByAppendingString:@"uniform/logout"]
+#define USERINFO [HOST stringByAppendingString:@"uniform/userInfo/getUserInfo"]
+#define RESETPASSWORD [HOST stringByAppendingString:@"uniform/resetPwd?"]
+#define COURSEDETAIL [HOST stringByAppendingString:@"mcme/cmeCoursesExam/getCmeCoursesExam"]
+#define MESSAGELIST [HOST stringByAppendingString:@"mcme/msg/getMsgList"]
 
 #endif /* PrefixHeader_pch */

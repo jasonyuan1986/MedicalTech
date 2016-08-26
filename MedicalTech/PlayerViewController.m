@@ -14,6 +14,7 @@
 #import <DZVideoPlayerViewController/DZVideoPlayerViewController.h>
 #import "CourseMovieListService.h"
 #import "RelatedCollectionViewCell.h"
+#import <AVKit/AVPlayerViewController.h>
 
 #define PAGESIZE 4
 
@@ -70,6 +71,8 @@
         NSURL *sourceMovieUrl = [NSURL URLWithString:movieUrl];
         self.videoPlayerViewController.videoURL = sourceMovieUrl;
         [self.videoPlayerViewController prepareAndPlayAutomatically:YES];
+        scoreLabel.text = [NSString stringWithFormat:@"学分 %@", [self.videoData objectForKey:@"point"]];
+        playNumberLabel.text = [NSString stringWithFormat:@"%@次播放", [self.videoData objectForKey:@"total_time"]];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
     }];
@@ -77,12 +80,20 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
+    if ([[UIDevice currentDevice] respondsToSelector:@selector(setOrientation:)]) {
+        SEL selector = NSSelectorFromString(@"setOrientation:");
+        NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[UIDevice instanceMethodSignatureForSelector:selector]];
+        [invocation setSelector:selector];
+        [invocation setTarget:[UIDevice currentDevice]];
+        int val = UIInterfaceOrientationPortrait;
+        [invocation setArgument:&val atIndex:2];
+        [invocation invoke];
+    }
+    
     [self.videoPlayerViewController stop];
     [self.videoPlayerViewController.playerView.player.currentItem cancelPendingSeeks];
     [self.videoPlayerViewController.playerView.player.currentItem.asset cancelLoading];
     self.videoPlayerViewControllerContainerView = nil;
-    
-    
 }
 
 - (void)viewDidLoad {
@@ -91,6 +102,10 @@
     self.view.backgroundColor = [UIColor colorWithRed:224.0/255.0 green:232.0/255.0 blue:235.0/255.0 alpha:1.0];
     self.title = @"医学移动教育平台";
     
+    [self initUI];
+}
+
+- (void)initUI {
     self.videoPlayerViewControllerContainerView = [[DZVideoPlayerViewControllerContainerView alloc] initWithStyle:DZVideoPlayerViewControllerStyleSimple];
     self.videoPlayerViewController = self.videoPlayerViewControllerContainerView.videoPlayerViewController;
     self.videoPlayerViewController.topToolbarView.hidden = YES;
@@ -134,7 +149,7 @@
     }];
     
     scoreLabel = [[UILabel alloc] init];
-    scoreLabel.text = @"学分 5分";
+    scoreLabel.text = @"";
     scoreLabel.font = [UIFont systemFontOfSize:16];
     [backView addSubview:scoreLabel];
     
@@ -145,7 +160,7 @@
     }];
     
     playNumberLabel = [[UILabel alloc] init];
-    playNumberLabel.text = @"3288次播放";
+    playNumberLabel.text = @"";
     playNumberLabel.textAlignment = NSTextAlignmentRight;
     playNumberLabel.font = [UIFont systemFontOfSize:16];
     [backView addSubview:playNumberLabel];
@@ -208,7 +223,7 @@
         make.right.equalTo(contentBackView).offset(-16);
         make.top.equalTo(contentTitleLabel.mas_bottom).offset(14);
         make.bottom.equalTo(contentBackView).offset(-18);
-
+        
     }];
     
     headerView = [[UIView alloc] init];
@@ -327,6 +342,44 @@
 
 - (void)playerDidPlay {
     
+}
+
+- (void)playerDidToggleFullscreen {
+    if (!self.videoPlayerViewController.isFullscreen) {
+        if ([[UIDevice currentDevice] respondsToSelector:@selector(setOrientation:)]) {
+            SEL selector = NSSelectorFromString(@"setOrientation:");
+            NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[UIDevice instanceMethodSignatureForSelector:selector]];
+            [invocation setSelector:selector];
+            [invocation setTarget:[UIDevice currentDevice]];
+            int val = UIInterfaceOrientationPortrait;
+            [invocation setArgument:&val atIndex:2];
+            [invocation invoke];
+        }
+        
+        [self.videoPlayerViewControllerContainerView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self.view);
+            make.right.equalTo(self.view);
+            make.top.equalTo(self.view).offset(64);
+            make.height.equalTo(self.videoPlayerViewControllerContainerView.mas_width).multipliedBy(235.0/360.0);
+        }];
+    } else {
+        if ([[UIDevice currentDevice] respondsToSelector:@selector(setOrientation:)]) {
+            SEL selector = NSSelectorFromString(@"setOrientation:");
+            NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[UIDevice instanceMethodSignatureForSelector:selector]];
+            [invocation setSelector:selector];
+            [invocation setTarget:[UIDevice currentDevice]];
+            int val = UIInterfaceOrientationLandscapeRight;
+            [invocation setArgument:&val atIndex:2];
+            [invocation invoke];
+        }
+        
+        [self.videoPlayerViewControllerContainerView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self.view);
+            make.right.equalTo(self.view);
+            make.top.equalTo(self.view);
+            make.bottom.equalTo(self.view);
+        }];
+    }
 }
 
 #pragma mark - Coure movie list delegate

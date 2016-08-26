@@ -1,22 +1,25 @@
 //
-//  MedicalNavigationViewController.m
+//  MainNavigationController.m
 //  MedicalTech
 //
-//  Created by Jason on 7/1/16.
+//  Created by Jason on 8/23/16.
 //  Copyright © 2016 Jason. All rights reserved.
 //
 
-#import "MedicalNavigationViewController.h"
+#import "MainNavigationController.h"
 
-@interface MedicalNavigationViewController ()
+@interface MainNavigationController ()
 
 @end
 
-@implementation MedicalNavigationViewController
+@implementation MainNavigationController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.navigationBar.barTintColor = [UIColor colorWithRed:0.0/255.0 green:192.0/255.0 blue:179.0/255.0 alpha:1.0];
+    self.navigationBar.tintColor = [UIColor whiteColor];
+    [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
 }
 
 - (void)didReceiveMemoryWarning {

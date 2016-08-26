@@ -11,7 +11,6 @@
 @protocol CourseMovieListServiceDelegate <NSObject>
 
 - (void)returnCourseMovieList:(NSArray *)dataArray Tag:(int)tag;
-- (void)relogin;
 
 @end
 
