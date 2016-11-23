@@ -17,7 +17,6 @@
  */
 + (void)getSms:(NSString *)mobiles smsType:(NSString *)smsType {
     NSString *requestUrl = [NSString stringWithFormat:@"%@mobile=%@&smsType=%@", GETSMS, mobiles, smsType];
-    
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
@@ -41,8 +40,7 @@
     [manager GET:requestUrl parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
-        
+                
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         

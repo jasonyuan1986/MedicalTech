@@ -16,6 +16,8 @@
 #import "ResetPasswordViewController.h"
 #import "LoginNavigationController.h"
 #import "MainNavigationController.h"
+#import "StudyPlanViewController.h"
+#import "HelpViewController.h"
 
 @interface AppDelegate () <LoginDelegate, LeftSideViewDelegate, SettingViewDelegate>
 
@@ -27,6 +29,8 @@
 @property (nonatomic, strong) SettingsViewController *settingsViewController;
 @property (nonatomic, strong) InboxViewController *inboxViewController;
 @property (nonatomic, strong) MyCourseViewController *myCourseViewController;
+@property (nonatomic, strong) StudyPlanViewController *studyPlanViewController;
+@property (nonatomic, strong) HelpViewController *helpViewController;
 @property (nonatomic, strong) MainNavigationController *mainNavigationController;
 @property (nonatomic, strong) IndexViewController *indexViewController;
 @property (nonatomic, strong) MMDrawerController *drawerController;
@@ -62,6 +66,7 @@
     }
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(relogin:) name:@"LOGINTIMEOUT" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(bindNoSuccess:) name:@"BINDNOSUCCESS" object:nil];
     
     return YES;
 }
@@ -101,10 +106,31 @@
     }
 }
 
+- (void)bindNoSuccess:(id)sender {
+    if (self.drawerController) {
+        [self.mainNavigationController popToRootViewControllerAnimated:NO];
+        [self.window setRootViewController:self.drawerController];
+    } else {
+        self.leftSideViewController = [[LeftSideViewController alloc] init];
+        self.leftSideViewController.delegate = self;
+        
+        self.indexViewController = [[IndexViewController alloc] init];
+        
+        self.mainNavigationController = [[MainNavigationController alloc] initWithRootViewController:self.indexViewController];
+        
+        self.drawerController = [[MMDrawerController alloc] initWithCenterViewController:self.mainNavigationController leftDrawerViewController:self.leftSideViewController];
+        [self.drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
+        [self.drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
+        
+        [self.window setRootViewController:self.drawerController];
+    }
+}
+
 #pragma mark - Login delegate
 
 - (void)loginSuccess {
     if (self.drawerController) {
+        [self.mainNavigationController popToRootViewControllerAnimated:NO];
         [self.window setRootViewController:self.drawerController];
     } else {
         self.leftSideViewController = [[LeftSideViewController alloc] init];
@@ -128,7 +154,7 @@
     UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleDone target:nil action:nil];
     self.mainNavigationController.topViewController.navigationItem.backBarButtonItem = barButtonItem;
     if (self.inboxViewController) {
-        [self.mainNavigationController.topViewController.navigationController pushViewController:self.settingsViewController animated:YES];
+        [self.mainNavigationController.topViewController.navigationController pushViewController:self.inboxViewController animated:YES];
     } else {
         self.inboxViewController = [[InboxViewController alloc] init];
 //        self.inboxViewController.delegate = self;
@@ -158,6 +184,30 @@
     } else {
         self.myCourseViewController = [[MyCourseViewController alloc] init];
         [self.mainNavigationController.topViewController.navigationController pushViewController:self.myCourseViewController animated:YES];
+    }
+    [self.drawerController closeDrawerAnimated:YES completion:nil];
+}
+
+- (void)goToStudyPlan {
+    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleDone target:nil action:nil];
+    self.mainNavigationController.topViewController.navigationItem.backBarButtonItem = barButtonItem;
+    if (self.studyPlanViewController) {
+        [self.mainNavigationController.topViewController.navigationController pushViewController:self.studyPlanViewController animated:YES];
+    } else {
+        self.studyPlanViewController = [[StudyPlanViewController alloc] init];
+        [self.mainNavigationController.topViewController.navigationController pushViewController:self.studyPlanViewController animated:YES];
+    }
+    [self.drawerController closeDrawerAnimated:YES completion:nil];
+}
+
+- (void)goToHelp {
+    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleDone target:nil action:nil];
+    self.mainNavigationController.topViewController.navigationItem.backBarButtonItem = barButtonItem;
+    if (self.helpViewController) {
+        [self.mainNavigationController.topViewController.navigationController pushViewController:self.helpViewController animated:YES];
+    } else {
+        self.helpViewController = [[HelpViewController alloc] init];
+        [self.mainNavigationController.topViewController.navigationController pushViewController:self.helpViewController animated:YES];
     }
     [self.drawerController closeDrawerAnimated:YES completion:nil];
 }

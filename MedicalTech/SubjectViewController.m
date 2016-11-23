@@ -11,8 +11,14 @@
 #import "TitleCollectionViewCell.h"
 #import "ContentCollectionViewCell.h"
 #import "PlayerViewController.h"
+#import "CourseMovieListService.h"
 
-@interface SubjectViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@interface SubjectViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CourseMovieListServiceDelegate>
+{
+    int pageNo;
+    int pageSize;
+    BOOL hasMore;
+}
 
 @property (nonatomic, strong) UIButton *backButton;
 @property (nonatomic, strong) UIButton *expandButton;
@@ -28,9 +34,11 @@
 @property (nonatomic, strong) NSMutableArray *titleArray;
 @property (nonatomic, strong) NSMutableArray *subjectIdArray;
 @property (nonatomic, strong) NSMutableArray *historyTable;
-@property (nonatomic, strong) NSArray *contentArray;
+@property (nonatomic, strong) NSMutableArray *contentArray;
 @property (nonatomic, assign) BOOL isExpand;
 @property (nonatomic, strong) PlayerViewController *playerViewController;
+@property (nonatomic, strong) NSNumber *currentSubjectId;
+@property (nonatomic, strong) MJRefreshAutoFooter *mjRefreshAutoFooter;
 
 @end
 
@@ -75,11 +83,16 @@
     self.title = @"医学移动教育平台";
     self.view.backgroundColor = [UIColor colorWithRed:233.0/255.0 green:233.0/255.0 blue:233.0/255.0 alpha:1.0];
     
+    [self initUI];
+    self.contentArray = [[NSMutableArray alloc] init];
+}
+
+- (void)initUI {
     self.titleArray = [[NSMutableArray alloc] init];
     self.subjectIdArray = [[NSMutableArray alloc] init];
     self.historyTable = [[NSMutableArray alloc] init];
     self.isExpand = NO;
-
+    
     self.backButton = [UIButton buttonWithType:UIButtonTypeSystem];
     self.backButton.enabled = NO;
     [self.backButton setImage:[UIImage imageNamed:@"backbutton"] forState:UIControlStateNormal];
@@ -116,7 +129,7 @@
     self.titleSegmentedControl.selectionIndicatorColor = [UIColor colorWithRed:30.0/255.0 green:198.0/255.0 blue:180.0/255.0 alpha:1.0];
     self.titleSegmentedControl.selectionIndicatorHeight = 0.0f;
     self.titleSegmentedControl.segmentEdgeInset = UIEdgeInsetsMake(0, 0, 0, 0);
-    self.titleSegmentedControl.titleTextAttributes = @{NSFontAttributeName: [UIFont systemFontOfSize:16.0 weight:UIFontWeightThin], NSForegroundColorAttributeName: [UIColor colorWithRed:30.0/255.0 green:198.0/255.0 blue:180.0/255.0 alpha:1.0]};
+    self.titleSegmentedControl.titleTextAttributes = @{NSFontAttributeName: [UIFont systemFontOfSize:16.0 weight:UIFontWeightRegular], NSForegroundColorAttributeName: [UIColor colorWithRed:30.0/255.0 green:198.0/255.0 blue:180.0/255.0 alpha:1.0]};
     __weak typeof(self) weakSelf = self;
     [self.titleSegmentedControl setIndexTouchBlock:^(NSInteger index) {
         [weakSelf getContentList:[weakSelf.subjectIdArray objectAtIndex:index]];
@@ -160,6 +173,15 @@
     self.contentCollectionView.delegate = self;
     self.contentCollectionView.dataSource = self;
     self.contentCollectionView.tag = 2;
+    
+    self.contentCollectionView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        if (hasMore) {
+            pageNo++;
+            CourseMovieListService *courseMovieListService = [[CourseMovieListService alloc] init];
+            courseMovieListService.delegate = self;
+            [courseMovieListService getCourseMovieList:[self.currentSubjectId stringValue] orderType:@"" recommend:@"" pageNo:pageNo pageSize:pageSize];
+        }
+    }];
     [self.view addSubview:self.contentCollectionView];
     
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc ]init];
@@ -175,22 +197,16 @@
 }
 
 - (void)getContentList:(NSNumber *)subjectId {
-    [MBProgressHUD showHUDAddedTo:self.contentCollectionView animated:YES].dimBackground = YES;
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    [self.contentArray removeAllObjects];
+    [self.mjRefreshAutoFooter resetNoMoreData];
+    pageNo = 1;
+    pageSize = 20;
+    hasMore = YES;
+    self.currentSubjectId = subjectId;
     
-    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-    [manager.requestSerializer setValue:HEADERTOKEN forHTTPHeaderField:@"token"];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
-    [manager GET:[NSString stringWithFormat:@"%@%@___1_20.do", CATALOGVIDEOLIST, subjectId] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
-        
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
-        self.contentArray = [dictionary objectForKey:@"data"];
-        [self.contentCollectionView reloadData];
-        [MBProgressHUD hideHUDForView:self.contentCollectionView animated:YES];
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        [MBProgressHUD hideHUDForView:self.contentCollectionView animated:YES];
-    }];
+    CourseMovieListService *courseMovieListService = [[CourseMovieListService alloc] init];
+    courseMovieListService.delegate = self;
+    [courseMovieListService getCourseMovieList:[self.currentSubjectId stringValue] orderType:@"" recommend:@"" pageNo:pageNo pageSize:pageSize];
 }
 
 - (void)goToIndex:(id)sender {
@@ -361,7 +377,7 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     if (collectionView.tag == 1) {
-        return CGSizeMake(80.0, 24.0);
+        return CGSizeMake(110.0, 24.0);
     } else {
         return CGSizeMake(SCREEN_WIDTH/3.0 - 10.0, 100.0);
     }
@@ -369,11 +385,26 @@
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
     if (collectionView.tag == 1) {
-        return UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0);
+        return UIEdgeInsetsMake(10.0, 10.0, 0.0, 5.0);
     } else {
         return UIEdgeInsetsMake(5.0, 5.0, 0.0, 5.0);
     }
     
+}
+
+#pragma mark - Course movie list delegate
+
+- (void)returnCourseMovieList:(NSArray *)dataArray Tag:(int)tag {
+    
+    [self.contentArray addObjectsFromArray:dataArray];
+    [self.contentCollectionView reloadData];
+    
+    if ([dataArray count] < 20) {
+        hasMore = NO;
+        [self.contentCollectionView.mj_footer endRefreshingWithNoMoreData];
+    } else {
+        [self.contentCollectionView.mj_footer endRefreshing];
+    }
 }
 
 @end

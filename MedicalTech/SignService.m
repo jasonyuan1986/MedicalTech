@@ -13,6 +13,7 @@
 @synthesize delegate;
 
 - (void)signout {
+    [MBProgressUtil showHUD];
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     [manager.requestSerializer setValue:HEADERTOKEN forHTTPHeaderField:@"token"];
@@ -20,6 +21,7 @@
     [manager GET:LOGOUT parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [MBProgressUtil hideHUD];
         NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
         NSNumber *ret = [dictionary objectForKey:@"ret"];
         
@@ -31,6 +33,7 @@
             [self.delegate logoutSuccess];
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [MBProgressUtil hideHUD];
     }];
 }
 

@@ -1,63 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A320" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
     </dependencies>
-    <scenes>
-        <!--Medical Navigation View Controller-->
-        <scene sceneID="Xnb-T7-GKU">
-            <objects>
-                <navigationController id="WLT-Yd-PgW" customClass="MedicalNavigationViewController" sceneMemberID="viewController">
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackTranslucent" id="E0r-uK-VyV">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.1176470588" green="0.77647058820000003" blue="0.70588235290000001" alpha="1" colorSpace="calibratedRGB"/>
-                    </navigationBar>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fkM-Ji-14I" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="493.5" y="427.5"/>
-        </scene>
-        <!--医学移动教育平台-->
-        <scene sceneID="jnH-bZ-f2M">
-            <objects>
-                <viewController id="ucw-4M-0Lq" customClass="IndexViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="dUv-7j-O5z"/>
-                        <viewControllerLayoutGuide type="bottom" id="jyt-gp-xaC"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ht5-BO-6Og">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="医学移动教育平台" id="BKw-aO-y1N"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eEc-pA-Rz7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="964.5" y="427.5"/>
-        </scene>
-        <!--Drawer View Controller-->
-        <scene sceneID="3iO-Gj-DVj">
-            <objects>
-                <viewController id="rkS-Yv-x8g" customClass="DrawerViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="GAK-BC-ehp"/>
-                        <viewControllerLayoutGuide type="bottom" id="gKl-uS-Jgw"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="y8V-PR-3we">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Sve-5C-3SD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5.5" y="427.5"/>
-        </scene>
-    </scenes>
+    <scenes/>
 </document>

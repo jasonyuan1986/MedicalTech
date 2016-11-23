@@ -10,6 +10,10 @@
 
 @interface MBProgressUtil : NSObject
 
++ (void)showHUD;
+
++ (void)hideHUD;
+
 + (void)MBShowMessage:(NSString *)message;
 
 @end

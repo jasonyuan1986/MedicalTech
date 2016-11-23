@@ -29,6 +29,7 @@
                   pageSize:(int)pageSize
 {
     NSString *request = [NSString stringWithFormat:@"%@_%@_%@_%@_%d_%d", COURSEMOVIELIST, subjectId, orderType, recommend, pageNo, pageSize];
+    [MBProgressUtil showHUD];
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     [manager.requestSerializer setValue:HEADERTOKEN forHTTPHeaderField:@"token"];
@@ -36,18 +37,22 @@
     [manager GET:request parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [MBProgressUtil hideHUD];
         NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
         NSNumber *ret = [dictionary objectForKey:@"ret"];
         
         if ([ret intValue] == 5) {
+            [MBProgressUtil MBShowMessage:@"没有登录，请先登录"];
             [[NSNotificationCenter defaultCenter] postNotificationName:@"LOGINTIMEOUT" object:nil userInfo:nil];
         } else if ([ret intValue] == 9) {
+            [MBProgressUtil MBShowMessage:@"登录超时，请重新登录"];
             [[NSNotificationCenter defaultCenter] postNotificationName:@"LOGINTIMEOUT" object:nil userInfo:nil];
         } else {
             [self.delegate returnCourseMovieList:[dictionary objectForKey:@"data"] Tag:self.tag];
         }        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        
+        [MBProgressUtil hideHUD];
+        [MBProgressUtil MBShowMessage:@"系统出错了，请稍后"];
     }];
 }
 

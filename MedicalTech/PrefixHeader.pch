@@ -17,16 +17,19 @@
 #import <AFNetworking/AFNetworking.h>
 #import <AFNetworking/UIKit+AFNetworking.h>
 #import <Masonry/Masonry.h>
-#import <MBProgressHUD/MBProgressHUD.h>
 #import "MBProgressUtil.h"
 #import "UIViewController+MMDrawerController.h"
+#import <MJRefresh/MJRefresh.h>
+#import <YYKeyboardManager/YYKeyboardManager.h>
 
 #define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
 #define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
 #define MAINCOLOR [UIColor colorWithRed:30.0/255.0 green:198.0/255.0 blue:180.0/255.0 alpha:1.0]
 #define HEADERTOKEN [[NSUserDefaults standardUserDefaults] objectForKey:@"token"]
 
-#define HOST @"http://tfxyztyh.vicp.cc:99/"
+//#define HOST @"http://tfxyztyh.vicp.cc:99/"
+//#define HOST @"http://edu.hnsrmyy.net:8088/"
+#define HOST @"http://edu.hnsrmyy.net:88/"
 
 #define ADVERTISEMENT [HOST stringByAppendingString:@"mcme/cmdAdv/getCmeAdvList"]
 #define SUBJECTLIST [HOST stringByAppendingString:@"mcme/cmeSubject/getCmeSubjectList_"]
@@ -50,5 +53,8 @@
 #define RESETPASSWORD [HOST stringByAppendingString:@"uniform/resetPwd?"]
 #define COURSEDETAIL [HOST stringByAppendingString:@"mcme/cmeCoursesExam/getCmeCoursesExam"]
 #define MESSAGELIST [HOST stringByAppendingString:@"mcme/msg/getMsgList"]
+#define READMESSAGE [HOST stringByAppendingString:@"mcme/msg/readMsg"]
+#define DICTINFOLIST [HOST stringByAppendingString:@"uniform/dicInfo/getDicInfoList?dicCategory=9902"]
+#define STUDYPLAN [HOST stringByAppendingString:@"mcme/cmeStudyTime/listForPartyId"]
 
 #endif /* PrefixHeader_pch */

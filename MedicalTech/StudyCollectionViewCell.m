@@ -12,7 +12,7 @@
 
 - (id)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, SCREEN_WIDTH/2.0 - 9.0, 131.0*SCREEN_WIDTH/414.0)];
+        imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, SCREEN_WIDTH/2.0 - 9.0, 128.0*SCREEN_WIDTH/414.0)];
         [self addSubview:imageView];
         
         titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 131.0*SCREEN_WIDTH/414.0, SCREEN_WIDTH/2.0 - 9.0, 20.0*SCREEN_WIDTH/414.0)];

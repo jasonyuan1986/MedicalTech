@@ -36,6 +36,7 @@ static AdvService *_instance = nil;
         NSArray *array = [dictionary objectForKey:@"data"];
         [self.delegate returnAdvList:array];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
     }];
 }
 

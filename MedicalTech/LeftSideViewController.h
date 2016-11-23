@@ -13,6 +13,8 @@
 - (void)goToInbox;
 - (void)goToSettings;
 - (void)goToMyCourse;
+- (void)goToStudyPlan;
+- (void)goToHelp;
 
 @end
 

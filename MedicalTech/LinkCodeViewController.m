@@ -9,7 +9,7 @@
 #import "LinkCodeViewController.h"
 #import "RegisterService.h"
 
-@interface LinkCodeViewController () <UITextFieldDelegate>
+@interface LinkCodeViewController () <UITextFieldDelegate, RegisterServiceDelegate>
 {
     UILabel *authPhoneLabel;
     UILabel *setauthCodeLabel;
@@ -23,11 +23,20 @@
 
 @implementation LinkCodeViewController
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    [bindField resignFirstResponder];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"绑定工号";
+    
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTaped:)];
+    [self.view addGestureRecognizer:tapGesture];
     
     [self initUI];
 }
@@ -88,6 +97,7 @@
     
     bindField = [[UITextField alloc] init];
     bindField.delegate = self;
+    bindField.keyboardType = UIKeyboardTypePhonePad;
     bindField.layer.cornerRadius = 5;
     bindField.layer.borderWidth = 1;
     bindField.layer.borderColor = [UIColor colorWithRed:198.0/255.0 green:198.0/255.0 blue:198.0/255.0 alpha:1.0].CGColor;
@@ -117,6 +127,11 @@
     }];
 }
 
+- (void)viewTaped:(id)sender {
+    [bindField resignFirstResponder];
+}
+
+
 - (void)cancelRegister:(id)sender {
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
@@ -127,14 +142,15 @@
         ;
     }];
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        ;
+        RegisterService *registerService = [[RegisterService alloc] init];
+        registerService.delegate = self;
+        [registerService bindNo:bindField.text];
     }];
     [confirmController addAction:cancelAction];
     [confirmController addAction:okAction];
     [self presentViewController:confirmController animated:YES completion:nil];
     
-//    RegisterService *registerService = [[RegisterService alloc] init];
-//    [registerService bindNo:bindField.text];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -156,6 +172,7 @@
 
 - (void)bindNoSuccess {
     [self.navigationController popToRootViewControllerAnimated:YES];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"BINDNOSUCCESS" object:nil userInfo:nil];
 }
 
 @end

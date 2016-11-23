@@ -30,11 +30,21 @@
 
 @implementation GetSmsViewController
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    [mobileField resignFirstResponder];
+    [authCodeField resignFirstResponder];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"验证手机";
+    
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTaped:)];
+    [self.view addGestureRecognizer:tapGesture];
     
     [self initUI];
 }
@@ -100,6 +110,7 @@
     mobileField = [[UITextField alloc] init];
     mobileField.tag = 1;
     mobileField.delegate = self;
+    mobileField.keyboardType = UIKeyboardTypePhonePad;
     mobileField.layer.cornerRadius = 5;
     mobileField.layer.borderWidth = 1;
     mobileField.layer.borderColor = [UIColor colorWithRed:198.0/255.0 green:198.0/255.0 blue:198.0/255.0 alpha:1.0].CGColor;
@@ -129,6 +140,7 @@
     authCodeField = [[UITextField alloc] init];
     authCodeField.tag = 2;
     authCodeField.delegate = self;
+    authCodeField.keyboardType = UIKeyboardTypePhonePad;
     authCodeField.layer.cornerRadius = 5;
     authCodeField.layer.borderWidth = 1;
     authCodeField.layer.borderColor = [UIColor colorWithRed:198.0/255.0 green:198.0/255.0 blue:198.0/255.0 alpha:1.0].CGColor;
@@ -171,6 +183,11 @@
         make.right.equalTo(next.superview).offset(-35);
         make.height.mas_equalTo(30);
     }];
+}
+
+- (void)viewTaped:(id)sender {
+    [mobileField resignFirstResponder];
+    [authCodeField resignFirstResponder];
 }
 
 - (void)initTimer {

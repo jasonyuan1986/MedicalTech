@@ -20,6 +20,7 @@
     UILabel *mobileLabel;
     UILabel *emailLabel;
     UITableView *listTableView;
+    UILabel *copyrightLabel;
 }
 
 @property (nonatomic, strong) SettingsViewController *settingsViewController;
@@ -30,11 +31,23 @@
 
 @synthesize delegate;
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    UserInfoService *userInfoService = [[UserInfoService alloc] init];
+    userInfoService.delegate = self;
+    [userInfoService getUserInfo];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     
+    [self initUI];
+}
+
+- (void)initUI {
     avatarImage = [[UIImageView alloc] init];
     avatarImage.image = [UIImage imageNamed:@"testAvatar"];
     [self.view addSubview:avatarImage];
@@ -112,22 +125,37 @@
         make.size.mas_equalTo(CGSizeMake(160, 16));
     }];
     
-    UserInfoService *userInfoService = [[UserInfoService alloc] init];
-    userInfoService.delegate = self;
-    [userInfoService getUserInfo];
-    
     listTableView = [[UITableView alloc] init];
     [listTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"listTableCell"];
     listTableView.delegate = self;
     listTableView.dataSource = self;
+    listTableView.scrollEnabled = NO;
     [self.view addSubview:listTableView];
     
     [listTableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(listTableView.superview);
         make.right.equalTo(listTableView.superview);
-        make.top.equalTo(emailLabel.mas_bottom).offset(20);
+        make.top.equalTo(emailLabel.mas_bottom).offset(10);
         make.bottom.equalTo(listTableView.superview);
     }];
+    
+    UIView *footerView = [[UIView alloc] initWithFrame:CGRectZero];
+    [listTableView setTableFooterView:footerView];
+    
+    copyrightLabel = [[UILabel alloc] init];
+    copyrightLabel.textAlignment = NSTextAlignmentCenter;
+    copyrightLabel.font = [UIFont systemFontOfSize:14.0 weight:UIFontWeightThin];
+    copyrightLabel.textColor = [UIColor grayColor];
+    copyrightLabel.text = @"Copyright © 2016 信知医学教育";
+    [self.view addSubview:copyrightLabel];
+    
+    [copyrightLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view);
+        make.right.equalTo(self.view);
+        make.bottom.equalTo(self.view);
+        make.height.mas_equalTo(20);
+    }];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -162,7 +190,7 @@
              
              [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
                  make.left.equalTo(imageView.superview).offset(21);
-                 make.top.equalTo(imageView.superview).offset(14);
+                 make.top.equalTo(imageView.superview).offset(9);
                  make.size.mas_equalTo(CGSizeMake(32, 32));
              }];
              
@@ -173,7 +201,7 @@
              
              [contentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
                  make.left.equalTo(imageView.mas_right).offset(21);
-                 make.top.equalTo(contentLabel.superview).offset(14);
+                 make.top.equalTo(contentLabel.superview).offset(9);
                  make.size.mas_equalTo(CGSizeMake(120, 32));
              }];
              
@@ -186,7 +214,7 @@
              
              [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
                  make.left.equalTo(imageView.superview).offset(21);
-                 make.top.equalTo(imageView.superview).offset(14);
+                 make.top.equalTo(imageView.superview).offset(9);
                  make.size.mas_equalTo(CGSizeMake(32, 32));
              }];
              
@@ -197,7 +225,7 @@
              
              [contentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
                  make.left.equalTo(imageView.mas_right).offset(21);
-                 make.top.equalTo(contentLabel.superview).offset(14);
+                 make.top.equalTo(contentLabel.superview).offset(9);
                  make.size.mas_equalTo(CGSizeMake(120, 32));
              }];
              break;
@@ -209,7 +237,7 @@
              
              [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
                  make.left.equalTo(imageView.superview).offset(21);
-                 make.top.equalTo(imageView.superview).offset(14);
+                 make.top.equalTo(imageView.superview).offset(9);
                  make.size.mas_equalTo(CGSizeMake(32, 32));
              }];
              
@@ -220,7 +248,7 @@
              
              [contentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
                  make.left.equalTo(imageView.mas_right).offset(21);
-                 make.top.equalTo(contentLabel.superview).offset(14);
+                 make.top.equalTo(contentLabel.superview).offset(9);
                  make.size.mas_equalTo(CGSizeMake(120, 32));
              }];
              break;
@@ -232,7 +260,7 @@
              
              [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
                  make.left.equalTo(imageView.superview).offset(21);
-                 make.top.equalTo(imageView.superview).offset(14);
+                 make.top.equalTo(imageView.superview).offset(9);
                  make.size.mas_equalTo(CGSizeMake(32, 32));
              }];
              
@@ -243,7 +271,7 @@
              
              [contentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
                  make.left.equalTo(imageView.mas_right).offset(21);
-                 make.top.equalTo(contentLabel.superview).offset(14);
+                 make.top.equalTo(contentLabel.superview).offset(9);
                  make.size.mas_equalTo(CGSizeMake(120, 32));
              }];
              break;
@@ -255,7 +283,7 @@
              
              [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
                  make.left.equalTo(imageView.superview).offset(21);
-                 make.top.equalTo(imageView.superview).offset(14);
+                 make.top.equalTo(imageView.superview).offset(9);
                  make.size.mas_equalTo(CGSizeMake(32, 32));
              }];
              
@@ -266,7 +294,7 @@
              
              [contentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
                  make.left.equalTo(imageView.mas_right).offset(21);
-                 make.top.equalTo(contentLabel.superview).offset(14);
+                 make.top.equalTo(contentLabel.superview).offset(9);
                  make.size.mas_equalTo(CGSizeMake(120, 32));
              }];
              break;
@@ -317,7 +345,7 @@
 #pragma mark - Table view delegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 64;
+    return 50;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -334,10 +362,12 @@
         }
         case 2:
         {
+            [self.delegate goToStudyPlan];
             break;
         }
         case 3:
         {
+            [self.delegate goToHelp];
             break;
         }
         case 4:

@@ -29,19 +29,27 @@
 
 @implementation ResetPasswordViewController
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    [mobileField resignFirstResponder];
+    [authCodeField resignFirstResponder];
+    [passwordField resignFirstResponder];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"重置密码";
     
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTaped:)];
+    [self.view addGestureRecognizer:tapGesture];
+    
     [self initUI];
 }
 
 - (void)initUI {
-    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTaped:)];
-    [self.view addGestureRecognizer:tapGesture];
-    
     logoImageView = [[UIImageView alloc] init];
     logoImageView.image = [UIImage imageNamed:@"loginimage"];
     [self.view addSubview:logoImageView];
@@ -81,6 +89,7 @@
     mobileField = [[UITextField alloc] init];
     mobileField.tag = 1;
     mobileField.delegate = self;
+    mobileField.keyboardType = UIKeyboardTypePhonePad;
     mobileField.layer.cornerRadius = 5;
     mobileField.layer.borderWidth = 1;
     mobileField.layer.borderColor = [UIColor colorWithRed:198.0/255.0 green:198.0/255.0 blue:198.0/255.0 alpha:1.0].CGColor;
@@ -110,6 +119,7 @@
     authCodeField = [[UITextField alloc] init];
     authCodeField.tag = 2;
     authCodeField.delegate = self;
+    authCodeField.keyboardType = UIKeyboardTypePhonePad;
     authCodeField.layer.cornerRadius = 5;
     authCodeField.layer.borderWidth = 1;
     authCodeField.layer.borderColor = [UIColor colorWithRed:198.0/255.0 green:198.0/255.0 blue:198.0/255.0 alpha:1.0].CGColor;
@@ -152,6 +162,7 @@
     passwordField = [[UITextField alloc] init];
     passwordField.tag = 3;
     passwordField.delegate = self;
+    passwordField.keyboardType = UIKeyboardTypeNamePhonePad;
     passwordField.layer.cornerRadius = 5;
     passwordField.layer.borderWidth = 1;
     passwordField.layer.borderColor = [UIColor colorWithRed:198.0/255.0 green:198.0/255.0 blue:198.0/255.0 alpha:1.0].CGColor;
@@ -183,6 +194,24 @@
     }];
 }
 
+- (void)viewTaped:(id)sender {
+    YYKeyboardManager *manager = [YYKeyboardManager defaultManager];
+    if (manager.keyboardVisible) {
+        [UIView beginAnimations:nil context:nil];
+        [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+        [UIView setAnimationDuration:0.18];
+        [UIView setAnimationTransition:UIViewAnimationTransitionNone forView:self.view cache:YES];
+        
+        self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y + 216, self.view.frame.size.width, self.view.frame.size.height);
+        
+        [UIView commitAnimations];
+    }
+    
+    [mobileField resignFirstResponder];
+    [authCodeField resignFirstResponder];
+    [passwordField resignFirstResponder];
+}
+
 - (void)initTimer {
     getAuthCode.enabled = NO;
     [getAuthCode setBackgroundColor:[UIColor grayColor]];
@@ -200,12 +229,6 @@
         [getAuthCode setBackgroundColor:MAINCOLOR];
         [getAuthCode setTitle:@"获取验证码" forState:UIControlStateNormal];
     }
-}
-
-- (void)viewTaped:(id)sender {
-    [mobileField resignFirstResponder];
-    [authCodeField resignFirstResponder];
-    [passwordField resignFirstResponder];
 }
 
 - (void)getAuthCode:(id)sender {
@@ -238,7 +261,17 @@
 #pragma mark - UITextFieldDelegate
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
-    self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y - 216, self.view.frame.size.width, self.view.frame.size.height);
+    YYKeyboardManager *manager = [YYKeyboardManager defaultManager];
+    if (!manager.keyboardVisible) {
+        [UIView beginAnimations:nil context:nil];
+        [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+        [UIView setAnimationDuration:0.42];
+        [UIView setAnimationTransition:UIViewAnimationTransitionNone forView:self.view cache:YES];
+        
+        self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y - 216, self.view.frame.size.width, self.view.frame.size.height);
+        
+        [UIView commitAnimations];
+    }
     if (textField.tag == 1) {
         mobileLabel.textColor = MAINCOLOR;
         mobileField.layer.borderColor = MAINCOLOR.CGColor;
@@ -254,7 +287,6 @@
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-    self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y + 216, self.view.frame.size.width, self.view.frame.size.height);
     if (textField.tag == 1) {
         mobileLabel.textColor = [UIColor blackColor];
         mobileField.layer.borderColor = [UIColor colorWithRed:198.0/255.0 green:198.0/255.0 blue:198.0/255.0 alpha:1.0].CGColor;

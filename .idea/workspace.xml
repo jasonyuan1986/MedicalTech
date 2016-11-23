@@ -1,0 +1,723 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ac49edd3-21bd-4f54-b24d-e2b9700114d7" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MedicalTech/Assets.xcassets/ic_person.imageset/ic_person-1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MedicalTech/Assets.xcassets/ic_person.imageset/ic_person-2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MedicalTech/Assets.xcassets/ic_person.imageset/ic_person.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MedicalTech/Assets.xcassets/ic_unlock.imageset/ic_unlock-1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MedicalTech/Assets.xcassets/ic_unlock.imageset/ic_unlock-2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MedicalTech/Assets.xcassets/ic_unlock.imageset/ic_unlock.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MedicalTech/Assets.xcassets/loginimage.imageset/1466496667600-1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MedicalTech/Assets.xcassets/loginimage.imageset/1466496667600-2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MedicalTech/Assets.xcassets/loginimage.imageset/1466496667600.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MedicalTech/Assets.xcassets/lookingforward.imageset/building-1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MedicalTech/Assets.xcassets/lookingforward.imageset/building-2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MedicalTech/Assets.xcassets/lookingforward.imageset/building.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MedicalTech/Assets.xcassets/testAvatar.imageset/default_avatar_bak-1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MedicalTech/Assets.xcassets/testAvatar.imageset/default_avatar_bak-2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MedicalTech/Assets.xcassets/testAvatar.imageset/default_avatar_bak.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MedicalTech.xcworkspace/contents.xcworkspacedata" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MedicalTech.xcworkspace/xcuserdata/Jason.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MedicalTech.xcworkspace/xcuserdata/Jason.xcuserdatad/xcschemes/xcschememanagement.plist" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MedicalTech/Assets.xcassets/ic_person.imageset/Contents.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MedicalTech/Assets.xcassets/ic_unlock.imageset/Contents.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MedicalTech/Assets.xcassets/lookingforward.imageset/Contents.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MedicalTech/CourseDetailViewController.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MedicalTech/CourseDetailViewController.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MedicalTech/LeftNavigationController.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MedicalTech/LeftNavigationController.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MedicalTech/MyCourseTableViewCell.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MedicalTech/MyCourseTableViewCell.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MedicalTech/SettingsViewController.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MedicalTech/SettingsViewController.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MedicalTech/SignService.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MedicalTech/SignService.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MedicalTech/UserInfoService.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MedicalTech/UserInfoService.m" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/MedicalTech/Assets.xcassets/loginimage.imageset/Slice-1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/MedicalTech/Assets.xcassets/loginimage.imageset/Slice-2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/MedicalTech/Assets.xcassets/loginimage.imageset/Slice-3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/MedicalTech/Assets.xcassets/testAvatar.imageset/Slice-1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/MedicalTech/Assets.xcassets/testAvatar.imageset/Slice-2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/MedicalTech/Assets.xcassets/testAvatar.imageset/Slice-3.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MedicalTech/Assets.xcassets/AppIcon.appiconset/Icon-29.png" afterPath="$PROJECT_DIR$/MedicalTech/Assets.xcassets/AppIcon.appiconset/Icon-29.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MedicalTech/Assets.xcassets/AppIcon.appiconset/Icon-29@2x-1.png" afterPath="$PROJECT_DIR$/MedicalTech/Assets.xcassets/AppIcon.appiconset/Icon-29@2x-1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MedicalTech/Assets.xcassets/AppIcon.appiconset/Icon-29@2x.png" afterPath="$PROJECT_DIR$/MedicalTech/Assets.xcassets/AppIcon.appiconset/Icon-29@2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MedicalTech/Assets.xcassets/AppIcon.appiconset/Icon-29@3x.png" afterPath="$PROJECT_DIR$/MedicalTech/Assets.xcassets/AppIcon.appiconset/Icon-29@3x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MedicalTech/Assets.xcassets/AppIcon.appiconset/Icon-40.png" afterPath="$PROJECT_DIR$/MedicalTech/Assets.xcassets/AppIcon.appiconset/Icon-40.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MedicalTech/Assets.xcassets/AppIcon.appiconset/Icon-40@2x-1.png" afterPath="$PROJECT_DIR$/MedicalTech/Assets.xcassets/AppIcon.appiconset/Icon-40@2x-1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MedicalTech/Assets.xcassets/AppIcon.appiconset/Icon-40@2x.png" afterPath="$PROJECT_DIR$/MedicalTech/Assets.xcassets/AppIcon.appiconset/Icon-40@2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MedicalTech/Assets.xcassets/AppIcon.appiconset/Icon-40@3x.png" afterPath="$PROJECT_DIR$/MedicalTech/Assets.xcassets/AppIcon.appiconset/Icon-40@3x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MedicalTech/Assets.xcassets/AppIcon.appiconset/Icon-60@2x.png" afterPath="$PROJECT_DIR$/MedicalTech/Assets.xcassets/AppIcon.appiconset/Icon-60@2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MedicalTech/Assets.xcassets/AppIcon.appiconset/Icon-60@3x.png" afterPath="$PROJECT_DIR$/MedicalTech/Assets.xcassets/AppIcon.appiconset/Icon-60@3x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MedicalTech/Assets.xcassets/AppIcon.appiconset/Icon-76.png" afterPath="$PROJECT_DIR$/MedicalTech/Assets.xcassets/AppIcon.appiconset/Icon-76.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MedicalTech/Assets.xcassets/AppIcon.appiconset/Icon-76@2x.png" afterPath="$PROJECT_DIR$/MedicalTech/Assets.xcassets/AppIcon.appiconset/Icon-76@2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MedicalTech/Assets.xcassets/AppIcon.appiconset/Icon-83.5@2x.png" afterPath="$PROJECT_DIR$/MedicalTech/Assets.xcassets/AppIcon.appiconset/Icon-83.5@2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MedicalTech.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/MedicalTech.xcodeproj/project.pbxproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MedicalTech/AppDelegate.m" afterPath="$PROJECT_DIR$/MedicalTech/AppDelegate.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MedicalTech/Assets.xcassets/loginimage.imageset/Contents.json" afterPath="$PROJECT_DIR$/MedicalTech/Assets.xcassets/loginimage.imageset/Contents.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MedicalTech/Assets.xcassets/testAvatar.imageset/Contents.json" afterPath="$PROJECT_DIR$/MedicalTech/Assets.xcassets/testAvatar.imageset/Contents.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MedicalTech/IndexViewController.m" afterPath="$PROJECT_DIR$/MedicalTech/IndexViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MedicalTech/Info.plist" afterPath="$PROJECT_DIR$/MedicalTech/Info.plist" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MedicalTech/LeftSideViewController.h" afterPath="$PROJECT_DIR$/MedicalTech/LeftSideViewController.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MedicalTech/LeftSideViewController.m" afterPath="$PROJECT_DIR$/MedicalTech/LeftSideViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MedicalTech/LoginViewController.m" afterPath="$PROJECT_DIR$/MedicalTech/LoginViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MedicalTech/MyCourseService.h" afterPath="$PROJECT_DIR$/MedicalTech/MyCourseService.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MedicalTech/MyCourseService.m" afterPath="$PROJECT_DIR$/MedicalTech/MyCourseService.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MedicalTech/MyCourseViewController.m" afterPath="$PROJECT_DIR$/MedicalTech/MyCourseViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MedicalTech/PrefixHeader.pch" afterPath="$PROJECT_DIR$/MedicalTech/PrefixHeader.pch" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MedicalTech/RegisterService.h" afterPath="$PROJECT_DIR$/MedicalTech/RegisterService.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MedicalTech/RegisterService.m" afterPath="$PROJECT_DIR$/MedicalTech/RegisterService.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MedicalTech/ResetPasswordViewController.m" afterPath="$PROJECT_DIR$/MedicalTech/ResetPasswordViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MedicalTech/SMSService.m" afterPath="$PROJECT_DIR$/MedicalTech/SMSService.m" />
+    </list>
+    <ignored path="MedicalTech.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos" />
+  <component name="FavoritesManager">
+    <favorites_list name="MedicalTech" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="IndexViewController.m" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MedicalTech/IndexViewController.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2850">
+              <caret line="190" column="38" selection-start-line="190" selection-start-column="38" selection-end-line="190" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StudyCollectionViewCell.m" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MedicalTech/StudyCollectionViewCell.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UnicodeToNSStringUtil.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MedicalTech/UnicodeToNSStringUtil.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SubjectViewController.m" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MedicalTech/SubjectViewController.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LinkCodeViewController.m" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MedicalTech/LinkCodeViewController.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1830">
+              <caret line="122" column="42" selection-start-line="122" selection-start-column="42" selection-end-line="122" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LeftSideViewController.m" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MedicalTech/LeftSideViewController.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="118">
+              <caret line="354" column="15" selection-start-line="354" selection-start-column="15" selection-end-line="354" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ResetPasswordViewController.m" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MedicalTech/ResetPasswordViewController.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="539">
+              <caret line="246" column="66" selection-start-line="246" selection-start-column="66" selection-end-line="246" selection-end-column="66" />
+              <folding>
+                <marker date="1471588457000" expanded="true" signature="0:139" ph="//..." />
+                <marker date="1471588457000" expanded="false" signature="149:203" ph="..." />
+                <marker date="1471588457000" expanded="true" signature="149:231" ph="..." />
+                <marker date="1471588457000" expanded="true" signature="321:608" ph="..." />
+                <marker date="1471588457000" expanded="true" signature="322:606" ph="{...}" />
+                <marker date="1471588457000" expanded="true" signature="657:9967" ph="..." />
+                <marker date="1471588457000" expanded="true" signature="679:4250" ph="{...}" />
+                <marker date="1471588457000" expanded="true" signature="1220:1525" ph="^(MASConstraintMaker *make){...}" />
+                <marker date="1471588457000" expanded="true" signature="3084:3340" ph="^(MASConstraintMaker *make){...}" />
+                <marker date="1471588457000" expanded="true" signature="3566:3780" ph="^(MASConstraintMaker *make){...}" />
+                <marker date="1471588457000" expanded="true" signature="7398:7471" ph="{...}" />
+                <marker date="1471588457000" expanded="true" signature="7504:7562" ph="{...}" />
+                <marker date="1471588457000" expanded="true" signature="7597:7821" ph="{...}" />
+                <marker date="1471588457000" expanded="true" signature="8395:8968" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RegisterService.m" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/MedicalTech/RegisterService.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="43">
+              <caret line="85" column="9" selection-start-line="85" selection-start-column="9" selection-end-line="85" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LeftSideViewController.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MedicalTech/LeftSideViewController.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GetSmsViewController.m" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MedicalTech/GetSmsViewController.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1065">
+              <caret line="71" column="25" selection-start-line="71" selection-start-column="25" selection-end-line="71" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/MedicalTech/IndexViewController.m" />
+        <option value="$PROJECT_DIR$/MedicalTech/SubjectViewController.m" />
+        <option value="$PROJECT_DIR$/MedicalTech/LinkCodeViewController.m" />
+        <option value="$PROJECT_DIR$/MedicalTech/LeftSideViewController.m" />
+        <option value="$PROJECT_DIR$/MedicalTech/ResetPasswordViewController.m" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-1662" />
+    <option name="y" value="115" />
+    <option name="width" value="1440" />
+    <option name="height" value="822" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MedicalTech" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MedicalTech" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MedicalTech" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MedicalTech" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MedicalTech" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Service" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MedicalTech" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MedicalTech" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Login" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MedicalTech" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MedicalTech" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Drawer" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Cidr.FilesView" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+  </component>
+  <component name="RunManager" selected="Application.MedicalTech">
+    <configuration default="true" type="AppleRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MedicalTech" TARGET_NAME="MedicalTech" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MedicalTech" RUN_TARGET_NAME="MedicalTech" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+      <method />
+    </configuration>
+    <configuration default="false" name="MedicalTech" type="AppleRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MedicalTech" TARGET_NAME="MedicalTech" CONFIG_NAME="Debug" SCHEME_NAME="MedicalTech" RUN_TARGET_PROJECT_NAME="MedicalTech" RUN_TARGET_NAME="MedicalTech" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+      <method />
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Application.MedicalTech" />
+    </list>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="StructureViewFactory">
+    <option name="ACTIVE_ACTIONS" value=",ALPHA_COMPARATOR,KIND" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ac49edd3-21bd-4f54-b24d-e2b9700114d7" name="Default" comment="" />
+      <created>1468245712380</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1468245712380</updated>
+      <workItem from="1470197545658" duration="1546000" />
+      <workItem from="1471587155222" duration="247000" />
+      <workItem from="1471587442064" duration="1169000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="2962000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-1662" y="115" width="1440" height="822" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24665257" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32831737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32947975" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32739726" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24876674" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/MedicalTech/RegisterService.m</url>
+          <line>103</line>
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/MedicalTech/IndexViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2850">
+          <caret line="190" column="38" selection-start-line="190" selection-start-column="38" selection-end-line="190" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MedicalTech/StudyCollectionViewCell.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MedicalTech/UnicodeToNSStringUtil.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MedicalTech/SubjectViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MedicalTech/LinkCodeViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1830">
+          <caret line="122" column="42" selection-start-line="122" selection-start-column="42" selection-end-line="122" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MedicalTech/LeftSideViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MedicalTech/GetSmsViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1065">
+          <caret line="71" column="25" selection-start-line="71" selection-start-column="25" selection-end-line="71" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MedicalTech/IndexViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2760">
+          <caret line="184" column="48" selection-start-line="184" selection-start-column="48" selection-end-line="184" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MedicalTech/StudyCollectionViewCell.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MedicalTech/UnicodeToNSStringUtil.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MedicalTech/SubjectViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MedicalTech/RegisterNavigationController.m" />
+    <entry file="file://$PROJECT_DIR$/MedicalTech/LinkCodeViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MedicalTech/GetSmsViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="945">
+          <caret line="63" column="25" selection-start-line="63" selection-start-column="25" selection-end-line="63" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MedicalTech/IndexViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2760">
+          <caret line="184" column="48" selection-start-line="184" selection-start-column="48" selection-end-line="184" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MedicalTech/StudyCollectionViewCell.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MedicalTech/UnicodeToNSStringUtil.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MedicalTech/SubjectViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MedicalTech/IndexViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2760">
+          <caret line="184" column="48" selection-start-line="184" selection-start-column="48" selection-end-line="184" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MedicalTech/StudyCollectionViewCell.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MedicalTech/UnicodeToNSStringUtil.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MedicalTech/SubjectViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MedicalTech/IndexViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MedicalTech/StudyCollectionViewCell.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MedicalTech/UnicodeToNSStringUtil.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MedicalTech/IndexViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2850">
+          <caret line="190" column="38" selection-start-line="190" selection-start-column="38" selection-end-line="190" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MedicalTech/SubjectViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MedicalTech/RegisterNavigationController.m" />
+    <entry file="file://$PROJECT_DIR$/MedicalTech/GetSmsViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1065">
+          <caret line="71" column="25" selection-start-line="71" selection-start-column="25" selection-end-line="71" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MedicalTech/LinkCodeViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1830">
+          <caret line="122" column="42" selection-start-line="122" selection-start-column="42" selection-end-line="122" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MedicalTech/LeftSideViewController.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MedicalTech/LeftSideViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="354" column="15" selection-start-line="354" selection-start-column="15" selection-end-line="354" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MedicalTech/ResetPasswordViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="539">
+          <caret line="246" column="66" selection-start-line="246" selection-start-column="66" selection-end-line="246" selection-end-column="66" />
+          <folding>
+            <marker date="1471588457000" expanded="true" signature="0:139" ph="//..." />
+            <marker date="1471588457000" expanded="false" signature="149:203" ph="..." />
+            <marker date="1471588457000" expanded="true" signature="149:231" ph="..." />
+            <marker date="1471588457000" expanded="true" signature="321:608" ph="..." />
+            <marker date="1471588457000" expanded="true" signature="322:606" ph="{...}" />
+            <marker date="1471588457000" expanded="true" signature="657:9967" ph="..." />
+            <marker date="1471588457000" expanded="true" signature="679:4250" ph="{...}" />
+            <marker date="1471588457000" expanded="true" signature="1220:1525" ph="^(MASConstraintMaker *make){...}" />
+            <marker date="1471588457000" expanded="true" signature="3084:3340" ph="^(MASConstraintMaker *make){...}" />
+            <marker date="1471588457000" expanded="true" signature="3566:3780" ph="^(MASConstraintMaker *make){...}" />
+            <marker date="1471588457000" expanded="true" signature="7398:7471" ph="{...}" />
+            <marker date="1471588457000" expanded="true" signature="7504:7562" ph="{...}" />
+            <marker date="1471588457000" expanded="true" signature="7597:7821" ph="{...}" />
+            <marker date="1471588457000" expanded="true" signature="8395:8968" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MedicalTech/RegisterService.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="43">
+          <caret line="85" column="9" selection-start-line="85" selection-start-column="9" selection-end-line="85" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

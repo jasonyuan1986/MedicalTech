@@ -7,8 +7,17 @@
 //
 
 #import "MBProgressUtil.h"
+#import <MBProgressHUD/MBProgressHUD.h>
 
 @implementation MBProgressUtil
+
++ (void)showHUD {
+    [MBProgressHUD showHUDAddedTo:[UIApplication sharedApplication].keyWindow animated:YES].dimBackground = YES;
+}
+
++ (void)hideHUD {
+    [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow animated:YES];
+}
 
 + (void)MBShowMessage:(NSString *)message {
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[UIApplication sharedApplication].keyWindow animated:YES];

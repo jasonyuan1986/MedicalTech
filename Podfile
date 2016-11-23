@@ -11,6 +11,8 @@ target 'MedicalTech' do
   pod 'MBProgressHUD', '~> 0.9.2'
   pod 'DZVideoPlayerViewController', '~> 0.4.0'
   pod 'MMDrawerController', '~> 0.6.0'
+  pod 'MJRefresh', '~> 3.1.9'
+  pod 'YYKeyboardManager', '~> 1.0.1'
 
   target 'MedicalTechTests' do
     inherit! :search_paths

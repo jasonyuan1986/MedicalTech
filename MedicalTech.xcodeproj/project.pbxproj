@@ -24,6 +24,7 @@
 		961BFF131D508B8A009A835E /* GetSmsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 961BFF121D508B8A009A835E /* GetSmsViewController.m */; };
 		961BFF161D50922F009A835E /* SetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 961BFF151D50922F009A835E /* SetPasswordViewController.m */; };
 		961BFF191D50923D009A835E /* LinkCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 961BFF181D50923D009A835E /* LinkCodeViewController.m */; };
+		9643F8521D7FBE5C003DC1AE /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9643F8511D7FBE5C003DC1AE /* HelpViewController.m */; };
 		9648E06B1D2E020300A3A90E /* KNBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9648E0601D2E020300A3A90E /* KNBannerView.m */; };
 		9648E06C1D2E020300A3A90E /* KNCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9648E0621D2E020300A3A90E /* KNCollectionViewCell.m */; };
 		9648E06D1D2E020300A3A90E /* KNJudgementTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 9648E0641D2E020300A3A90E /* KNJudgementTool.m */; };
@@ -35,7 +36,12 @@
 		965620861D6AAA3900735A59 /* CourseDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 965620851D6AAA3900735A59 /* CourseDetailTableViewCell.m */; };
 		966285AC1D6EA589006F06FC /* InboxService.m in Sources */ = {isa = PBXBuildFile; fileRef = 966285AB1D6EA589006F06FC /* InboxService.m */; };
 		966285AF1D6EC321006F06FC /* MessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 966285AE1D6EC321006F06FC /* MessageTableViewCell.m */; };
+		966E68061D865EE70038E23E /* InboxDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 966E68051D865EE70038E23E /* InboxDetailViewController.m */; };
 		9671A79E1D659FEF00FB28EC /* SignService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9671A79D1D659FEF00FB28EC /* SignService.m */; };
+		9677A8191D7E6D64006B0BF1 /* StudyPlanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9677A8181D7E6D64006B0BF1 /* StudyPlanViewController.m */; };
+		9677A81C1D7E713F006B0BF1 /* StudyService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9677A81B1D7E713F006B0BF1 /* StudyService.m */; };
+		9677A81F1D7E76DB006B0BF1 /* StudyPlanTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9677A81E1D7E76DB006B0BF1 /* StudyPlanTableViewCell.m */; };
+		96844E001D795045009D3510 /* DictInfoService.m in Sources */ = {isa = PBXBuildFile; fileRef = 96844DFF1D795045009D3510 /* DictInfoService.m */; };
 		96879A511D3687FB000B8262 /* StudyCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 96879A501D3687FB000B8262 /* StudyCollectionViewCell.m */; };
 		9687F7301D3218F60037AAEA /* PlatformTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9687F72F1D3218F60037AAEA /* PlatformTableViewCell.m */; };
 		968A11341D33E01E00FEDDD4 /* UnicodeToNSStringUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 968A11331D33E01E00FEDDD4 /* UnicodeToNSStringUtil.m */; };
@@ -45,7 +51,6 @@
 		96A077C81D28E0450089C0A9 /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A077C71D28E0450089C0A9 /* HMSegmentedControl.m */; };
 		96A132EA1D3FAC410000699D /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A132E91D3FAC410000699D /* PlayerViewController.m */; };
 		96C8D1CA1D66BF2800E12465 /* UserInfoService.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C8D1C91D66BF2800E12465 /* UserInfoService.m */; };
-		96C8D1CD1D66F78C00E12465 /* LoginService.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C8D1CC1D66F78C00E12465 /* LoginService.m */; };
 		96E50E001D47183E0052BF64 /* LeftSideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E50DFF1D47183E0052BF64 /* LeftSideViewController.m */; };
 		96EB5D971D63F82100DCEA6B /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EB5D961D63F82100DCEA6B /* SettingsViewController.m */; };
 		96EB5D9B1D6434DF00DCEA6B /* CourseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EB5D9A1D6434DF00DCEA6B /* CourseDetailViewController.m */; };
@@ -115,6 +120,8 @@
 		961BFF151D50922F009A835E /* SetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetPasswordViewController.m; sourceTree = "<group>"; };
 		961BFF171D50923D009A835E /* LinkCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkCodeViewController.h; sourceTree = "<group>"; };
 		961BFF181D50923D009A835E /* LinkCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkCodeViewController.m; sourceTree = "<group>"; };
+		9643F8501D7FBE5C003DC1AE /* HelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpViewController.h; sourceTree = "<group>"; };
+		9643F8511D7FBE5C003DC1AE /* HelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpViewController.m; sourceTree = "<group>"; };
 		9648E05F1D2E020300A3A90E /* KNBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KNBannerView.h; sourceTree = "<group>"; };
 		9648E0601D2E020300A3A90E /* KNBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KNBannerView.m; sourceTree = "<group>"; };
 		9648E0611D2E020300A3A90E /* KNCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KNCollectionViewCell.h; sourceTree = "<group>"; };
@@ -138,8 +145,18 @@
 		966285AB1D6EA589006F06FC /* InboxService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InboxService.m; sourceTree = "<group>"; };
 		966285AD1D6EC321006F06FC /* MessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageTableViewCell.h; sourceTree = "<group>"; };
 		966285AE1D6EC321006F06FC /* MessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageTableViewCell.m; sourceTree = "<group>"; };
+		966E68041D865EE70038E23E /* InboxDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InboxDetailViewController.h; sourceTree = "<group>"; };
+		966E68051D865EE70038E23E /* InboxDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InboxDetailViewController.m; sourceTree = "<group>"; };
 		9671A79C1D659FEF00FB28EC /* SignService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignService.h; sourceTree = "<group>"; };
 		9671A79D1D659FEF00FB28EC /* SignService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignService.m; sourceTree = "<group>"; };
+		9677A8171D7E6D64006B0BF1 /* StudyPlanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudyPlanViewController.h; sourceTree = "<group>"; };
+		9677A8181D7E6D64006B0BF1 /* StudyPlanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudyPlanViewController.m; sourceTree = "<group>"; };
+		9677A81A1D7E713F006B0BF1 /* StudyService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudyService.h; sourceTree = "<group>"; };
+		9677A81B1D7E713F006B0BF1 /* StudyService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudyService.m; sourceTree = "<group>"; };
+		9677A81D1D7E76DB006B0BF1 /* StudyPlanTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudyPlanTableViewCell.h; sourceTree = "<group>"; };
+		9677A81E1D7E76DB006B0BF1 /* StudyPlanTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudyPlanTableViewCell.m; sourceTree = "<group>"; };
+		96844DFE1D795045009D3510 /* DictInfoService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictInfoService.h; sourceTree = "<group>"; };
+		96844DFF1D795045009D3510 /* DictInfoService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictInfoService.m; sourceTree = "<group>"; };
 		96879A4F1D3687FB000B8262 /* StudyCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudyCollectionViewCell.h; sourceTree = "<group>"; };
 		96879A501D3687FB000B8262 /* StudyCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudyCollectionViewCell.m; sourceTree = "<group>"; };
 		9687F72E1D3218F60037AAEA /* PlatformTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlatformTableViewCell.h; sourceTree = "<group>"; };
@@ -160,8 +177,6 @@
 		96A132E91D3FAC410000699D /* PlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerViewController.m; sourceTree = "<group>"; };
 		96C8D1C81D66BF2800E12465 /* UserInfoService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoService.h; sourceTree = "<group>"; };
 		96C8D1C91D66BF2800E12465 /* UserInfoService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoService.m; sourceTree = "<group>"; };
-		96C8D1CB1D66F78C00E12465 /* LoginService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginService.h; sourceTree = "<group>"; };
-		96C8D1CC1D66F78C00E12465 /* LoginService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginService.m; sourceTree = "<group>"; };
 		96E50DFE1D47183E0052BF64 /* LeftSideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftSideViewController.h; sourceTree = "<group>"; };
 		96E50DFF1D47183E0052BF64 /* LeftSideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftSideViewController.m; sourceTree = "<group>"; };
 		96EB5D951D63F82100DCEA6B /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
@@ -270,10 +285,12 @@
 				9671A79D1D659FEF00FB28EC /* SignService.m */,
 				96C8D1C81D66BF2800E12465 /* UserInfoService.h */,
 				96C8D1C91D66BF2800E12465 /* UserInfoService.m */,
-				96C8D1CB1D66F78C00E12465 /* LoginService.h */,
-				96C8D1CC1D66F78C00E12465 /* LoginService.m */,
 				966285AA1D6EA589006F06FC /* InboxService.h */,
 				966285AB1D6EA589006F06FC /* InboxService.m */,
+				96844DFE1D795045009D3510 /* DictInfoService.h */,
+				96844DFF1D795045009D3510 /* DictInfoService.m */,
+				9677A81A1D7E713F006B0BF1 /* StudyService.h */,
+				9677A81B1D7E713F006B0BF1 /* StudyService.m */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -381,6 +398,14 @@
 				964EB7861D6C03B900CADC2E /* InboxViewController.m */,
 				966285AD1D6EC321006F06FC /* MessageTableViewCell.h */,
 				966285AE1D6EC321006F06FC /* MessageTableViewCell.m */,
+				966E68041D865EE70038E23E /* InboxDetailViewController.h */,
+				966E68051D865EE70038E23E /* InboxDetailViewController.m */,
+				9677A8171D7E6D64006B0BF1 /* StudyPlanViewController.h */,
+				9677A8181D7E6D64006B0BF1 /* StudyPlanViewController.m */,
+				9677A81D1D7E76DB006B0BF1 /* StudyPlanTableViewCell.h */,
+				9677A81E1D7E76DB006B0BF1 /* StudyPlanTableViewCell.m */,
+				9643F8501D7FBE5C003DC1AE /* HelpViewController.h */,
+				9643F8511D7FBE5C003DC1AE /* HelpViewController.m */,
 			);
 			name = LeftMenu;
 			sourceTree = "<group>";
@@ -544,7 +569,7 @@
 		96F1331E1D2642B70097A7D3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Jason;
 				TargetAttributes = {
 					96F133251D2642B70097A7D3 = {
@@ -743,6 +768,7 @@
 				96E50E001D47183E0052BF64 /* LeftSideViewController.m in Sources */,
 				965620861D6AAA3900735A59 /* CourseDetailTableViewCell.m in Sources */,
 				968D36CF1D3F1A8D000E1102 /* ContentCollectionViewCell.m in Sources */,
+				9643F8521D7FBE5C003DC1AE /* HelpViewController.m in Sources */,
 				960DBFED1D48568000B96D00 /* LoginViewController.m in Sources */,
 				966285AC1D6EA589006F06FC /* InboxService.m in Sources */,
 				96F1332B1D2642B70097A7D3 /* main.m in Sources */,
@@ -750,6 +776,7 @@
 				9648E0701D2E020300A3A90E /* UIView+Extension.m in Sources */,
 				960DCD5C1D62ECC000236868 /* MyCourseViewController.m in Sources */,
 				9648E06E1D2E020300A3A90E /* NSData+KNCache.m in Sources */,
+				9677A81F1D7E76DB006B0BF1 /* StudyPlanTableViewCell.m in Sources */,
 				96F1335E1D2643280097A7D3 /* IndexViewController.m in Sources */,
 				961BFF191D50923D009A835E /* LinkCodeViewController.m in Sources */,
 				960BFC4A1D544926006AE57E /* MBProgressUtil.m in Sources */,
@@ -757,21 +784,24 @@
 				960DCD621D62F47E00236868 /* MyCourseTableViewCell.m in Sources */,
 				964EB7871D6C03B900CADC2E /* InboxViewController.m in Sources */,
 				96A077C81D28E0450089C0A9 /* HMSegmentedControl.m in Sources */,
+				96844E001D795045009D3510 /* DictInfoService.m in Sources */,
 				96C8D1CA1D66BF2800E12465 /* UserInfoService.m in Sources */,
 				960DCD581D62CB2100236868 /* RelatedCollectionViewCell.m in Sources */,
 				9648E06D1D2E020300A3A90E /* KNJudgementTool.m in Sources */,
 				9648E06B1D2E020300A3A90E /* KNBannerView.m in Sources */,
 				9687F7301D3218F60037AAEA /* PlatformTableViewCell.m in Sources */,
+				9677A81C1D7E713F006B0BF1 /* StudyService.m in Sources */,
 				96EB5D9B1D6434DF00DCEA6B /* CourseDetailViewController.m in Sources */,
 				960CE8C21D61B10000DF4E32 /* CourseMovieListService.m in Sources */,
-				96C8D1CD1D66F78C00E12465 /* LoginService.m in Sources */,
 				960DCD5F1D62F1D800236868 /* MyCourseService.m in Sources */,
 				966285AF1D6EC321006F06FC /* MessageTableViewCell.m in Sources */,
 				9648E06F1D2E020300A3A90E /* NSString+hash.m in Sources */,
 				961BFF161D50922F009A835E /* SetPasswordViewController.m in Sources */,
 				964EB78A1D6C21B700CADC2E /* MainNavigationController.m in Sources */,
 				968D36CC1D3E6C74000E1102 /* TitleCollectionViewCell.m in Sources */,
+				9677A8191D7E6D64006B0BF1 /* StudyPlanViewController.m in Sources */,
 				96EB5D971D63F82100DCEA6B /* SettingsViewController.m in Sources */,
+				966E68061D865EE70038E23E /* InboxDetailViewController.m in Sources */,
 				960CE8BF1D61AC9B00DF4E32 /* AdvService.m in Sources */,
 				96182ABF1D51D79F004A1A37 /* RegisterService.m in Sources */,
 				968A11341D33E01E00FEDDD4 /* UnicodeToNSStringUtil.m in Sources */,
@@ -847,8 +877,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -894,8 +926,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -927,8 +961,8 @@
 			baseConfigurationReference = AB025E3C502BAE8040654D12 /* Pods-MedicalTech.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Cong Lin Fan (5E3LQ2BEG4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Cong Lin Fan (5E3LQ2BEG4)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MedicalTech/PrefixHeader.pch";
 				INFOPLIST_FILE = MedicalTech/Info.plist;
@@ -940,7 +974,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.jason.MedicalTech;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "8c2f8f77-566b-4ced-93b5-1b979dea1730";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s arm64";
 			};
@@ -951,8 +985,9 @@
 			baseConfigurationReference = F9C53D8AC4A7CA87352F20C9 /* Pods-MedicalTech.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Cong Lin Fan (97KQ7BFT43)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Cong Lin Fan (97KQ7BFT43)";
+				DEVELOPMENT_TEAM = 97KQ7BFT43;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MedicalTech/PrefixHeader.pch";
 				INFOPLIST_FILE = MedicalTech/Info.plist;
@@ -964,7 +999,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.jason.MedicalTech;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "c3585812-4836-4152-b127-37aeddb61233";
+				PROVISIONING_PROFILE_SPECIFIER = "medical App Store";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s arm64";
 			};

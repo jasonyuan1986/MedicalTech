@@ -20,4 +20,6 @@
 
 - (void)getMyMessage;
 
+- (void)readMessage:(NSNumber *)msgId;
+
 @end

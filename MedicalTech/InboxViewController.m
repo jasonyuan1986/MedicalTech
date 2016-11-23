@@ -10,6 +10,7 @@
 #import "HMSegmentedControl.h"
 #import "MessageTableViewCell.h"
 #import "InboxService.h"
+#import "InboxDetailViewController.h"
 
 @interface InboxViewController () <UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource, InboxServiceDelegate>
 
@@ -17,6 +18,7 @@
 @property (nonatomic, strong) UIScrollView *myScrollView;
 @property (nonatomic, strong) UITableView *messageTableView;
 @property (nonatomic, strong) NSArray *messageArray;
+@property (nonatomic, strong) InboxDetailViewController *inboxDetailViewController;
 
 @end
 
@@ -124,6 +126,9 @@
          cell.separatorInset = UIEdgeInsetsZero;
      }
  
+     NSDictionary *dictionary = [self.messageArray objectAtIndex:indexPath.row];
+     [cell setText:dictionary];
+     
      return cell;
  }
 
@@ -161,6 +166,26 @@
  return YES;
  }
  */
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 70;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSDictionary *dictionary = [self.messageArray objectAtIndex:indexPath.row];
+    
+    InboxService *inboxService = [[InboxService alloc] init];
+    [inboxService readMessage:[dictionary objectForKey:@"msgId"]];
+    
+    if (self.inboxDetailViewController) {
+        self.inboxDetailViewController.data = dictionary;
+        [self.navigationController pushViewController:self.inboxDetailViewController animated:YES];
+    } else {
+        self.inboxDetailViewController = [[InboxDetailViewController alloc] init];
+        self.inboxDetailViewController.data = dictionary;
+        [self.navigationController pushViewController:self.inboxDetailViewController animated:YES];
+    }
+}
 
 #pragma mark - InboxService delegate
 

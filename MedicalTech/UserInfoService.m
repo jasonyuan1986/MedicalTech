@@ -26,7 +26,7 @@
         if ([ret intValue] == 0) {
             [self.delegate returnUserInfo:[dictionary objectForKey:@"data"]];
         } else {
-            [self.delegate relogin];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"LOGINTIMEOUT" object:nil userInfo:nil];
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
     }];

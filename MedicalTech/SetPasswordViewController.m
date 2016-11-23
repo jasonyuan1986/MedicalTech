@@ -27,6 +27,13 @@
 
 @implementation SetPasswordViewController
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    [passwordField resignFirstResponder];
+    [againField resignFirstResponder];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -35,10 +42,16 @@
     UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleDone target:nil action:nil];
     self.navigationItem.backBarButtonItem = barButtonItem;
 
-    
     UIBarButtonItem *cancelButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(cancelRegister:)];
     self.navigationItem.rightBarButtonItem = cancelButtonItem;
     
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTaped:)];
+    [self.view addGestureRecognizer:tapGesture];
+    
+    [self initUI];
+}
+
+- (void)initUI {
     authPhoneLabel = [[UILabel alloc] init];
     authPhoneLabel.text = @"1.验证手机";
     authPhoneLabel.textColor = [UIColor whiteColor];
@@ -92,6 +105,7 @@
     passwordField = [[UITextField alloc] init];
     passwordField.tag = 1;
     passwordField.delegate = self;
+    passwordField.keyboardType = UIKeyboardTypeNamePhonePad;
     passwordField.layer.cornerRadius = 5;
     passwordField.layer.borderWidth = 1;
     passwordField.layer.borderColor = [UIColor colorWithRed:198.0/255.0 green:198.0/255.0 blue:198.0/255.0 alpha:1.0].CGColor;
@@ -121,6 +135,7 @@
     againField = [[UITextField alloc] init];
     againField.tag = 2;
     againField.delegate = self;
+    againField.keyboardType = UIKeyboardTypeNamePhonePad;
     againField.layer.cornerRadius = 5;
     againField.layer.borderWidth = 1;
     againField.layer.borderColor = [UIColor colorWithRed:198.0/255.0 green:198.0/255.0 blue:198.0/255.0 alpha:1.0].CGColor;
@@ -149,6 +164,11 @@
         make.right.equalTo(next.superview).offset(-35);
         make.height.mas_equalTo(30);
     }];
+}
+
+- (void)viewTaped:(id)sender {
+    [passwordField resignFirstResponder];
+    [againField resignFirstResponder];
 }
 
 - (void)cancelRegister:(id)sender {

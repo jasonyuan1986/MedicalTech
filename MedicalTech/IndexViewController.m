@@ -16,10 +16,12 @@
 #import "AdvService.h"
 #import "CourseMovieListService.h"
 #import "PlayerViewController.h"
+#import "DictInfoService.h"
+#import "UserInfoService.h"
 
 @interface IndexViewController () <UIScrollViewDelegate, UITableViewDelegate,
     UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout,
-    UIGestureRecognizerDelegate, AdvServiceDelegate, CourseMovieListServiceDelegate>
+    UIGestureRecognizerDelegate, AdvServiceDelegate, CourseMovieListServiceDelegate, DictInfoServiceDelegate, UserInfoServiceDelegate>
 
 @property (nonatomic, strong) UIScrollView *myScrollView;
 @property (nonatomic, strong) KNBannerView *myBannerView;
@@ -31,6 +33,9 @@
 @property (nonatomic, strong) SubjectViewController *subjectViewController;
 @property (nonatomic, strong) MyCourseViewController *myCourseViewController;
 @property (nonatomic, strong) PlayerViewController *playerViewController;
+@property (nonatomic, strong) UIWebView *trainWebView;
+@property (nonatomic, strong) NSString *userId;
+@property (nonatomic, strong) NSString *trainUrl;
 
 @end
 
@@ -38,6 +43,8 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+    [self loadData];
 }
 
 - (void)viewDidLoad {
@@ -46,14 +53,13 @@
     self.title = @"医学移动教育平台";
     
     [self initUI];
-    [self loadData];
 }
 
 - (void)initUI {
     UIBarButtonItem *buttonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"peopleicon"] style:UIBarButtonItemStylePlain target:self action:@selector(peopleIconButton:)];
     self.navigationItem.leftBarButtonItem = buttonItem;
     
-    self.segmentedControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"医教平台", @"在线学习", @"病例学习", @"模拟考试"]];
+    self.segmentedControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"医教平台", @"在线学习", @"规范化培训", @"模拟考试"]];
     
     self.segmentedControl.frame = CGRectMake(0, 64, SCREEN_WIDTH, 41);
     self.segmentedControl.segmentWidthStyle = HMSegmentedControlSegmentWidthStyleDynamic;
@@ -93,7 +99,7 @@
     self.platformTableView.dataSource = self;
     [self.myScrollView addSubview:self.platformTableView];
     
-    UIView *studyHeaderView = [[UIView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH, 15.0, SCREEN_WIDTH, 62.0 * SCREEN_WIDTH/414.0)];
+    UIView *studyHeaderView = [[UIView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH, 1.0, SCREEN_WIDTH, 60.0 * SCREEN_WIDTH/414.0)];
     studyHeaderView.backgroundColor = [UIColor whiteColor];
     UIImageView *studyIcon = [[UIImageView alloc] initWithFrame:CGRectMake(6.0, 15.0 * SCREEN_WIDTH/414.0, 32.0 * SCREEN_WIDTH/414.0, 32.0 * SCREEN_WIDTH/414.0)];
     studyIcon.image = [UIImage imageNamed:@"studyIcon"];
@@ -104,18 +110,18 @@
     [self.myScrollView addSubview:studyHeaderView];
     
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc ]init];
-    self.studyCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH, 62.0 * SCREEN_WIDTH/414.0 + 15.0, SCREEN_WIDTH, 326.0 * SCREEN_WIDTH/414.0) collectionViewLayout:flowLayout];
+    self.studyCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH, 62.0 * SCREEN_WIDTH/414.0 + 1.0, SCREEN_WIDTH, 475.0 * SCREEN_WIDTH/414.0) collectionViewLayout:flowLayout];
     self.studyCollectionView.backgroundColor = [UIColor whiteColor];
     self.studyCollectionView.dataSource = self;
     self.studyCollectionView.delegate = self;
     [self.studyCollectionView registerClass:[StudyCollectionViewCell class] forCellWithReuseIdentifier:@"studyCell"];
     [self.myScrollView addSubview:self.studyCollectionView];
     
-    UIView *splitView = [[UIView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH, 388.0 * SCREEN_WIDTH/414.0 + 15.0, SCREEN_WIDTH, 1.0)];
+    UIView *splitView = [[UIView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH, 537.0 * SCREEN_WIDTH/414.0, SCREEN_WIDTH, 1.0)];
     splitView.backgroundColor = [UIColor colorWithRed:0.0/255.0 green:192.0/255.0 blue:179.0/255.0 alpha:1.0];
     [self.myScrollView addSubview:splitView];
     
-    UIButton *myLessonButton = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH, 388.0 * SCREEN_WIDTH/414.0 + 16.0, SCREEN_WIDTH/2.0, 41.0)];
+    UIButton *myLessonButton = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH, 537.0 * SCREEN_WIDTH/414.0 + 1.0, SCREEN_WIDTH/2.0, 41.0)];
     [myLessonButton setImage:[UIImage imageNamed:@"mylesson"] forState:UIControlStateNormal];
     
     if (SCREEN_WIDTH == 375.0) {
@@ -133,7 +139,7 @@
     [myLessonButton addTarget:self action:@selector(goToMyCourse:) forControlEvents:UIControlEventTouchUpInside];
     [self.myScrollView addSubview:myLessonButton];
     
-    UIButton *moreLessonButton = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH + SCREEN_WIDTH/2.0, 388.0 * SCREEN_WIDTH/414.0 + 16.0, SCREEN_WIDTH/2.0, 41.0)];
+    UIButton *moreLessonButton = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH + SCREEN_WIDTH/2.0, 537.0 * SCREEN_WIDTH/414.0 + 1.0, SCREEN_WIDTH/2.0, 41.0)];
     [moreLessonButton setImage:[UIImage imageNamed:@"morelesson"] forState:UIControlStateNormal];
     if (SCREEN_WIDTH == 375.0) {
         [moreLessonButton setImageEdgeInsets:UIEdgeInsetsMake(0, 90, 0, -90)];
@@ -150,16 +156,9 @@
     [moreLessonButton addTarget:self action:@selector(goToSubjectView:) forControlEvents:UIControlEventTouchUpInside];
     [self.myScrollView addSubview:moreLessonButton];
     
-    UIView *view1 = [[UIView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH * 2, 0.0, SCREEN_WIDTH, SCREEN_HEIGHT - 105.0)];
-    [self.myScrollView addSubview:view1];
+    self.trainWebView = [[UIWebView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH * 2, 0.0, SCREEN_WIDTH, SCREEN_HEIGHT - 105.0)];
+    [self.myScrollView addSubview:self.trainWebView];
     
-    UIImageView *imageview1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"lookingforward"]];
-    [view1 addSubview:imageview1];
-    
-    [imageview1 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(view1);
-        make.size.mas_equalTo(CGSizeMake(128, 128));
-    }];
     
     UIView *view2 = [[UIView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH * 3, 0.0, SCREEN_WIDTH, SCREEN_HEIGHT - 105.0)];
     [self.myScrollView addSubview:view2];
@@ -186,7 +185,15 @@
     latestService.delegate = self;
     [latestService getCourseMovieList:@"" orderType:@"1"
                             recommend:@""   pageNo:1
-                             pageSize:4];
+                             pageSize:6];
+    
+    DictInfoService *dictInfoService = [[DictInfoService alloc] init];
+    dictInfoService.delegate = self;
+    [dictInfoService getDictInfo];
+    
+    UserInfoService *userInfoService = [[UserInfoService alloc] init];
+    userInfoService.delegate = self;
+    [userInfoService getUserInfo];
 }
 
 - (void)peopleIconButton:(id)sender {
@@ -355,7 +362,7 @@
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 4;
+    return 6;
 }
 
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
@@ -371,11 +378,11 @@
 #pragma mark - UICollectionViewDelegateFlowLayout
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake(SCREEN_WIDTH/2.0 - 9.0, 152.0 * SCREEN_WIDTH/414.0);
+    return CGSizeMake(SCREEN_WIDTH/2.0 - 9.0, 148.0 * SCREEN_WIDTH/414.0);
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-    return UIEdgeInsetsMake(3.0, 3.0, 3.0, 3.0);
+    return UIEdgeInsetsMake(3.0, 3.0, 0.0, 3.0);
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -416,9 +423,10 @@
     self.myBannerView.netWorkImgArr = imgArr;
 }
 
-#pragma mark - Coure movie list delegate
+#pragma mark - Course movie list delegate
 
 - (void)returnCourseMovieList:(NSArray *)dataArray Tag:(int)tag {
+    NSLog(@"%@", dataArray);
     switch (tag) {
         case 1:
         {
@@ -435,6 +443,39 @@
         default:
             break;
     }
+}
+
+#pragma mark - Dict info service delegate
+
+- (void)returnDictInfo:(NSArray *)dataArray {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    for (NSDictionary *data in dataArray) {
+        if ([[data objectForKey:@"dicCode"] isEqualToString:@"1"]) {
+            self.trainUrl = [data objectForKey:@"dicValue"];
+        } else if ([[data objectForKey:@"dicCode"] isEqualToString:@"2"]) {
+            [defaults setValue:[data objectForKey:@"dicValue"] forKey:@"helpURL"];
+        }
+    }
+    
+    if (self.userId) {
+        self.trainUrl = [NSString stringWithFormat:@"%@%@", self.trainUrl, self.userId];
+        NSLog(@"url: %@", self.trainUrl);
+        [self.trainWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.trainUrl]]];
+    }
+}
+
+#pragma mark - UserInfoService delegate
+
+- (void)returnUserInfo:(NSDictionary *)data {
+    self.userId = [data objectForKey:@"userId"];
+    
+    if (self.trainUrl) {
+        self.trainUrl = [NSString stringWithFormat:@"%@%@", self.trainUrl, self.userId];
+        NSLog(@"url: %@", self.trainUrl);
+        [self.trainWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.trainUrl]]];
+    }
+    
 }
 
 @end

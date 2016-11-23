@@ -11,7 +11,6 @@
 @protocol UserInfoServiceDelegate <NSObject>
 
 - (void)returnUserInfo:(NSDictionary *)data;
-- (void)relogin;
 
 @end
 

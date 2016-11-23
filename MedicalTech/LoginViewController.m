@@ -39,19 +39,26 @@
 
 @synthesize delegate;
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    [mobileField resignFirstResponder];
+    [passwordField resignFirstResponder];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"登陆";
     
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTaped:)];
+    [self.view addGestureRecognizer:tapGesture];
+    
     [self initUI];
 }
 
 - (void)initUI {
-    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTaped:)];
-    [self.view addGestureRecognizer:tapGesture];
-    
     logoImageView = [[UIImageView alloc] init];
     logoImageView.image = [UIImage imageNamed:@"loginimage"];
     [self.view addSubview:logoImageView];
@@ -92,6 +99,7 @@
     mobileField = [[UITextField alloc] init];
     mobileField.tag = 1;
     mobileField.delegate = self;
+    mobileField.keyboardType = UIKeyboardTypePhonePad;
     mobileField.layer.cornerRadius = 5;
     mobileField.layer.borderWidth = 1;
     mobileField.layer.borderColor = [UIColor colorWithRed:198.0/255.0 green:198.0/255.0 blue:198.0/255.0 alpha:1.0].CGColor;
@@ -122,6 +130,7 @@
     passwordField = [[UITextField alloc] init];
     passwordField.tag = 2;
     passwordField.delegate = self;
+    passwordField.keyboardType = UIKeyboardTypeNamePhonePad;
     passwordField.layer.cornerRadius = 5;
     passwordField.layer.borderWidth = 1;
     passwordField.layer.borderColor = [UIColor colorWithRed:198.0/255.0 green:198.0/255.0 blue:198.0/255.0 alpha:1.0].CGColor;
@@ -164,7 +173,7 @@
     [forgetPassword mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(signinButton.mas_bottom).offset(8);
         make.left.equalTo(forgetPassword.superview).offset(35);
-        make.size.mas_equalTo(CGSizeMake(60, 20));
+        make.size.mas_equalTo(CGSizeMake(80, 20));
     }];
     
     firstLaunch = [UIButton buttonWithType:UIButtonTypeSystem];
@@ -179,7 +188,7 @@
     [firstLaunch mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(signinButton.mas_bottom).offset(8);
         make.right.equalTo(forgetPassword.superview).offset(-35);
-        make.size.mas_equalTo(CGSizeMake(60, 20));
+        make.size.mas_equalTo(CGSizeMake(80, 20));
     }];
 }
 
@@ -201,6 +210,8 @@
             [defaults setValue:token forKey:@"token"];
             
             [self.delegate loginSuccess];
+        } else if ([ret intValue] == 10056) {
+            
         } else {
             [MBProgressUtil MBShowMessage:[dictionary objectForKey:@"msg"]];
         }
@@ -210,6 +221,19 @@
 }
 
 - (void)viewTaped:(id)sender {
+    YYKeyboardManager *manager = [YYKeyboardManager defaultManager];
+    if (manager.keyboardVisible) {
+        [UIView beginAnimations:nil context:nil];
+        [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+        [UIView setAnimationDuration:0.18];
+        [UIView setAnimationTransition:UIViewAnimationTransitionNone forView:self.view cache:YES];
+        
+        self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y + 216, self.view.frame.size.width, self.view.frame.size.height);
+        
+        [UIView commitAnimations];
+    }
+    
+    
     [mobileField resignFirstResponder];
     [passwordField resignFirstResponder];
 }
@@ -250,8 +274,18 @@
 #pragma mark - UITextFieldDelegate
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
-    self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y - 216, self.view.frame.size.width, self.view.frame.size.height);
-
+    YYKeyboardManager *manager = [YYKeyboardManager defaultManager];
+    if (!manager.keyboardVisible) {
+        [UIView beginAnimations:nil context:nil];
+        [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+        [UIView setAnimationDuration:0.42];
+        [UIView setAnimationTransition:UIViewAnimationTransitionNone forView:self.view cache:YES];
+        
+        self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y - 216, self.view.frame.size.width, self.view.frame.size.height);
+        
+        [UIView commitAnimations];
+    }
+    
     if (textField.tag == 1) {
         mobileLabel.textColor = MAINCOLOR;
         mobileField.layer.borderColor = MAINCOLOR.CGColor;
@@ -264,7 +298,10 @@
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-    self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y + 216, self.view.frame.size.width, self.view.frame.size.height);
+//    YYKeyboardManager *manager = [YYKeyboardManager defaultManager];
+//    if (!manager.keyboardVisible) {
+//    }
+    
 
     if (textField.tag == 1) {
         mobileLabel.textColor = [UIColor blackColor];

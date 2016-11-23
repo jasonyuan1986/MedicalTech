@@ -150,6 +150,7 @@
 #pragma mark - MyCourseService delegate
 
 - (void)returnMyCourse:(NSArray *)dataArray {
+    NSLog(@"%@", dataArray);
     self.myCourseArray = dataArray;
     [myTableView reloadData];
 }
